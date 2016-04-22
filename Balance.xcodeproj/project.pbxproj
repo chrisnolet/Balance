@@ -14,6 +14,14 @@
 		832A76161CC9885600FEA998 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 832A76151CC9885600FEA998 /* Assets.xcassets */; };
 		832A76191CC9885600FEA998 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 832A76171CC9885600FEA998 /* LaunchScreen.storyboard */; };
 		832A76221CC98B8600FEA998 /* AppConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 832A76211CC98B8600FEA998 /* AppConstants.m */; };
+		835961B71CC9F88F00D22A10 /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 835961B61CC9F88F00D22A10 /* UserManager.m */; };
+		835961BA1CC9F8D100D22A10 /* TransactionObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 835961B91CC9F8D100D22A10 /* TransactionObject.m */; };
+		835961BD1CC9FA9100D22A10 /* AccountObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 835961BC1CC9FA9100D22A10 /* AccountObject.m */; };
+		835961C11CC9FBEF00D22A10 /* BankObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 835961C01CC9FBEF00D22A10 /* BankObject.m */; };
+		835961CA1CCA0A4200D22A10 /* NSDate+DateByAddingDays.m in Sources */ = {isa = PBXBuildFile; fileRef = 835961C31CCA0A4200D22A10 /* NSDate+DateByAddingDays.m */; };
+		835961CB1CCA0A4200D22A10 /* NSDateFormatter+StringWithFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 835961C51CCA0A4200D22A10 /* NSDateFormatter+StringWithFormat.m */; };
+		835961CC1CCA0A4200D22A10 /* UIAlertView+Error.m in Sources */ = {isa = PBXBuildFile; fileRef = 835961C71CCA0A4200D22A10 /* UIAlertView+Error.m */; };
+		835961CD1CCA0A4200D22A10 /* UIButton+ActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 835961C91CCA0A4200D22A10 /* UIButton+ActivityIndicatorView.m */; };
 		B186E45215A692ADFD5CD891 /* libPods-Balance.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 09DD390A1B78FEDDAAD8E872 /* libPods-Balance.a */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +40,22 @@
 		832A76201CC98B8600FEA998 /* AppConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppConstants.h; sourceTree = "<group>"; };
 		832A76211CC98B8600FEA998 /* AppConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppConstants.m; sourceTree = "<group>"; };
 		832A762D1CC98E8300FEA998 /* Balance-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Balance-Prefix.pch"; sourceTree = "<group>"; };
+		835961B51CC9F88F00D22A10 /* UserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserManager.h; path = Models/UserManager.h; sourceTree = "<group>"; };
+		835961B61CC9F88F00D22A10 /* UserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserManager.m; path = Models/UserManager.m; sourceTree = "<group>"; };
+		835961B81CC9F8D100D22A10 /* TransactionObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TransactionObject.h; path = Models/TransactionObject.h; sourceTree = "<group>"; };
+		835961B91CC9F8D100D22A10 /* TransactionObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TransactionObject.m; path = Models/TransactionObject.m; sourceTree = "<group>"; };
+		835961BB1CC9FA9100D22A10 /* AccountObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AccountObject.h; path = Models/AccountObject.h; sourceTree = "<group>"; };
+		835961BC1CC9FA9100D22A10 /* AccountObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccountObject.m; path = Models/AccountObject.m; sourceTree = "<group>"; };
+		835961BF1CC9FBEF00D22A10 /* BankObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BankObject.h; path = Models/BankObject.h; sourceTree = "<group>"; };
+		835961C01CC9FBEF00D22A10 /* BankObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BankObject.m; path = Models/BankObject.m; sourceTree = "<group>"; };
+		835961C21CCA0A4200D22A10 /* NSDate+DateByAddingDays.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDate+DateByAddingDays.h"; path = "Categories/NSDate+DateByAddingDays.h"; sourceTree = "<group>"; };
+		835961C31CCA0A4200D22A10 /* NSDate+DateByAddingDays.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDate+DateByAddingDays.m"; path = "Categories/NSDate+DateByAddingDays.m"; sourceTree = "<group>"; };
+		835961C41CCA0A4200D22A10 /* NSDateFormatter+StringWithFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDateFormatter+StringWithFormat.h"; path = "Categories/NSDateFormatter+StringWithFormat.h"; sourceTree = "<group>"; };
+		835961C51CCA0A4200D22A10 /* NSDateFormatter+StringWithFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDateFormatter+StringWithFormat.m"; path = "Categories/NSDateFormatter+StringWithFormat.m"; sourceTree = "<group>"; };
+		835961C61CCA0A4200D22A10 /* UIAlertView+Error.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIAlertView+Error.h"; path = "Categories/UIAlertView+Error.h"; sourceTree = "<group>"; };
+		835961C71CCA0A4200D22A10 /* UIAlertView+Error.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIAlertView+Error.m"; path = "Categories/UIAlertView+Error.m"; sourceTree = "<group>"; };
+		835961C81CCA0A4200D22A10 /* UIButton+ActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIButton+ActivityIndicatorView.h"; path = "Categories/UIButton+ActivityIndicatorView.h"; sourceTree = "<group>"; };
+		835961C91CCA0A4200D22A10 /* UIButton+ActivityIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIButton+ActivityIndicatorView.m"; path = "Categories/UIButton+ActivityIndicatorView.m"; sourceTree = "<group>"; };
 		883871DB2CE94624EDEBA99B /* Pods-Balance.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Balance.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Balance/Pods-Balance.debug.xcconfig"; sourceTree = "<group>"; };
 		EE6ADE43772F9B4707CF0797 /* Pods-Balance.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Balance.release.xcconfig"; path = "Pods/Target Support Files/Pods-Balance/Pods-Balance.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -116,6 +140,14 @@
 		832A76271CC98D3300FEA998 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				835961B51CC9F88F00D22A10 /* UserManager.h */,
+				835961B61CC9F88F00D22A10 /* UserManager.m */,
+				835961BF1CC9FBEF00D22A10 /* BankObject.h */,
+				835961C01CC9FBEF00D22A10 /* BankObject.m */,
+				835961BB1CC9FA9100D22A10 /* AccountObject.h */,
+				835961BC1CC9FA9100D22A10 /* AccountObject.m */,
+				835961B81CC9F8D100D22A10 /* TransactionObject.h */,
+				835961B91CC9F8D100D22A10 /* TransactionObject.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -139,6 +171,14 @@
 		832A762A1CC98D5800FEA998 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				835961C21CCA0A4200D22A10 /* NSDate+DateByAddingDays.h */,
+				835961C31CCA0A4200D22A10 /* NSDate+DateByAddingDays.m */,
+				835961C41CCA0A4200D22A10 /* NSDateFormatter+StringWithFormat.h */,
+				835961C51CCA0A4200D22A10 /* NSDateFormatter+StringWithFormat.m */,
+				835961C61CCA0A4200D22A10 /* UIAlertView+Error.h */,
+				835961C71CCA0A4200D22A10 /* UIAlertView+Error.m */,
+				835961C81CCA0A4200D22A10 /* UIButton+ActivityIndicatorView.h */,
+				835961C91CCA0A4200D22A10 /* UIButton+ActivityIndicatorView.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -272,9 +312,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				832A76111CC9885600FEA998 /* HomeViewController.m in Sources */,
+				835961B71CC9F88F00D22A10 /* UserManager.m in Sources */,
+				835961CD1CCA0A4200D22A10 /* UIButton+ActivityIndicatorView.m in Sources */,
+				835961CA1CCA0A4200D22A10 /* NSDate+DateByAddingDays.m in Sources */,
+				835961CB1CCA0A4200D22A10 /* NSDateFormatter+StringWithFormat.m in Sources */,
+				835961CC1CCA0A4200D22A10 /* UIAlertView+Error.m in Sources */,
+				835961C11CC9FBEF00D22A10 /* BankObject.m in Sources */,
 				832A760E1CC9885600FEA998 /* AppDelegate.m in Sources */,
+				835961BD1CC9FA9100D22A10 /* AccountObject.m in Sources */,
 				832A760B1CC9885600FEA998 /* main.m in Sources */,
 				832A76221CC98B8600FEA998 /* AppConstants.m in Sources */,
+				835961BA1CC9F8D100D22A10 /* TransactionObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

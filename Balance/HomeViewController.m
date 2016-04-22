@@ -7,6 +7,7 @@
 //
 
 #import "HomeViewController.h"
+#import "BankObject.h"
 
 @interface HomeViewController ()
 
@@ -66,14 +67,15 @@
 - (void)linkNavigationContoller:(PLDLinkNavigationViewController *)navigationController
        didFinishWithAccessToken:(NSString *)accessToken
 {
-//    _titleLabel.text = @"Success!";
     [self dismissViewControllerAnimated:YES completion:nil];
+
+    BankObject *bank = [[BankObject alloc] initWithAccessToken:accessToken];
+    [bank update];
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)linkNavigationControllerDidFinishWithBankNotListed:(PLDLinkNavigationViewController *)navigationController
 {
-//    _titleLabel.text = @"Manually enter bank info?";
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
