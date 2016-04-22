@@ -1,0 +1,33 @@
+PODS:
+  - Analytics/Core-iOS (2.0.17):
+    - TRVSDictionaryWithCaseInsensitivity (= 0.0.2)
+  - Analytics/Mixpanel (2.0.17):
+    - Analytics/Core-iOS
+    - Analytics/Segmentio
+    - Mixpanel (= 2.8.3)
+  - Analytics/Segmentio (2.0.17):
+    - Analytics/Core-iOS
+  - Mixpanel (2.8.3):
+    - Mixpanel/Mixpanel (= 2.8.3)
+  - Mixpanel/Mixpanel (2.8.3)
+  - plaid-ios-link (0.1.1):
+    - plaid-ios-sdk
+  - plaid-ios-sdk (0.3.6)
+  - SVProgressHUD (2.0.3)
+  - TRVSDictionaryWithCaseInsensitivity (0.0.2)
+
+DEPENDENCIES:
+  - Analytics/Mixpanel (~> 2.0)
+  - plaid-ios-link (~> 0.1)
+  - plaid-ios-sdk (~> 0.3)
+  - SVProgressHUD (~> 2.0)
+
+SPEC CHECKSUMS:
+  Analytics: 51d6163cb568c8ede69f2b92ef4779d91e1524e2
+  Mixpanel: fd52e097ae0d27295d0595b2261c60b94d191fda
+  plaid-ios-link: b508d0cb64007ec036c98ff7f2f0ec1913e8467b
+  plaid-ios-sdk: e9865b0fe6a79b3d30d886171d7a26f7e1408935
+  SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
+  TRVSDictionaryWithCaseInsensitivity: 51d2ccf52c6d645d27b63467a98fa02c556e01b0
+
+COCOAPODS: 0.39.0

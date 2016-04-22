@@ -1,11 +1,11 @@
 source 'https://github.com/CocoaPods/Specs.git'
 
-platform :ios, '7.0'
+platform :ios, '8.0'
 inhibit_all_warnings!
 
-target 'Example' do
-  pod 'Analytics/Mixpanel'
-  pod 'plaid-ios-link'
-  pod 'plaid-ios-sdk'
-  pod 'SVProgressHUD'
+target 'Balance' do
+  pod 'Analytics/Mixpanel', '~> 2.0'
+  pod 'plaid-ios-link', '~> 0.1'
+  pod 'plaid-ios-sdk', '~> 0.3'
+  pod 'SVProgressHUD', '~> 2.0'
 end
