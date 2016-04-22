@@ -10,6 +10,6 @@
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
-- (IBAction)addButtonPressed:(id)sender;
+- (IBAction)addBarButtonItemPressed:(id)sender;
 
 @end
