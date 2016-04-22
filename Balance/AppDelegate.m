@@ -6,6 +6,7 @@
 //  Copyright © 2016 Relaunch. All rights reserved.
 //
 
+#import <Plaid.h>
 #import "AppDelegate.h"
 
 @implementation AppDelegate
@@ -16,6 +17,9 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    // Initialize Plaid
+    [Plaid sharedInstance].publicKey = kPlaidPublicKey;
+
     return YES;
 }
 

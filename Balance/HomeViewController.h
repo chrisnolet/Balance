@@ -6,7 +6,11 @@
 //  Copyright © 2016 Relaunch. All rights reserved.
 //
 
-@interface HomeViewController : UIViewController
+#import "PLDLinkNavigationViewController.h"
+
+@interface HomeViewController : UIViewController <UITableViewDataSource,
+                                                  UITableViewDelegate,
+                                                  PLDLinkNavigationControllerDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
