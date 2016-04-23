@@ -7,6 +7,8 @@
 //
 
 #import "BankObject.h"
+#import "Adapter.h"
+#import "AccountObject.h"
 
 @implementation BankObject
 
@@ -31,7 +33,24 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)update
 {
+    // TODO(CN): Move API calls to class methods on the object-types that they create
+    // For example: + (NSArray *)accountsForAccessToken:(NSString *)accessToken;
 
+    // TODO(CN): Alternatively, create a SyncManager to manage Realm database store
+
+    [[Adapter sharedInstance] postToEndpoint:@"balance"
+                                  parameters:@{ @"access_token": self.accessToken }
+                                  completion:^(NSDictionary *results, NSError *error) {
+
+        // Populate accounts
+        NSMutableArray *accounts = [NSMutableArray array];
+
+        for (NSDictionary *account in results[@"accounts"]) {
+            [accounts addObject:[[AccountObject alloc] initWithDictionary:account]];
+        }
+
+        self.accounts = [accounts copy];
+    }];
 }
 
 @end

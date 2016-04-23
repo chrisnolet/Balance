@@ -86,6 +86,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="balanceLabel" destination="avB-iE-Lvb" id="U4I-gQ-yum"/>
                         <outlet property="tableView" destination="ma4-KF-w2z" id="yxR-rJ-qCS"/>
                     </connections>
                 </viewController>

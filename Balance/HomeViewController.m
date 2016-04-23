@@ -84,11 +84,10 @@
                                   completion:^(NSDictionary *results, NSError *error) {
 
         // Add new bank details
-        //BankObject *bank = [[BankObject alloc] initWithAccessToken:accessToken];
-        //[bank update];
-    }];
+        BankObject *bank = [[BankObject alloc] initWithAccessToken:results[@"access_token"]];
 
-    NSLog(@"Public Token: %@", publicToken);
+        [bank update];
+    }];
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

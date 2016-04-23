@@ -12,6 +12,7 @@
                                                   UITableViewDelegate,
                                                   PLDLinkNavigationControllerDelegate>
 
+@property (strong, nonatomic) IBOutlet UILabel *balanceLabel;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 - (IBAction)addBarButtonItemPressed:(id)sender;
