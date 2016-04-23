@@ -22,6 +22,7 @@
 		835961CB1CCA0A4200D22A10 /* NSDateFormatter+StringWithFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 835961C51CCA0A4200D22A10 /* NSDateFormatter+StringWithFormat.m */; };
 		835961CC1CCA0A4200D22A10 /* UIAlertView+Error.m in Sources */ = {isa = PBXBuildFile; fileRef = 835961C71CCA0A4200D22A10 /* UIAlertView+Error.m */; };
 		835961CD1CCA0A4200D22A10 /* UIButton+ActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 835961C91CCA0A4200D22A10 /* UIButton+ActivityIndicatorView.m */; };
+		835961D01CCA1E4600D22A10 /* Adapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 835961CF1CCA1E4600D22A10 /* Adapter.m */; };
 		B186E45215A692ADFD5CD891 /* libPods-Balance.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 09DD390A1B78FEDDAAD8E872 /* libPods-Balance.a */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,8 @@
 		835961C71CCA0A4200D22A10 /* UIAlertView+Error.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIAlertView+Error.m"; path = "Categories/UIAlertView+Error.m"; sourceTree = "<group>"; };
 		835961C81CCA0A4200D22A10 /* UIButton+ActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIButton+ActivityIndicatorView.h"; path = "Categories/UIButton+ActivityIndicatorView.h"; sourceTree = "<group>"; };
 		835961C91CCA0A4200D22A10 /* UIButton+ActivityIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIButton+ActivityIndicatorView.m"; path = "Categories/UIButton+ActivityIndicatorView.m"; sourceTree = "<group>"; };
+		835961CE1CCA1E4600D22A10 /* Adapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Adapter.h; path = Models/Adapter.h; sourceTree = "<group>"; };
+		835961CF1CCA1E4600D22A10 /* Adapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Adapter.m; path = Models/Adapter.m; sourceTree = "<group>"; };
 		883871DB2CE94624EDEBA99B /* Pods-Balance.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Balance.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Balance/Pods-Balance.debug.xcconfig"; sourceTree = "<group>"; };
 		EE6ADE43772F9B4707CF0797 /* Pods-Balance.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Balance.release.xcconfig"; path = "Pods/Target Support Files/Pods-Balance/Pods-Balance.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -140,6 +143,8 @@
 		832A76271CC98D3300FEA998 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				835961CE1CCA1E4600D22A10 /* Adapter.h */,
+				835961CF1CCA1E4600D22A10 /* Adapter.m */,
 				835961B51CC9F88F00D22A10 /* UserManager.h */,
 				835961B61CC9F88F00D22A10 /* UserManager.m */,
 				835961BF1CC9FBEF00D22A10 /* BankObject.h */,
@@ -315,6 +320,7 @@
 				835961B71CC9F88F00D22A10 /* UserManager.m in Sources */,
 				835961CD1CCA0A4200D22A10 /* UIButton+ActivityIndicatorView.m in Sources */,
 				835961CA1CCA0A4200D22A10 /* NSDate+DateByAddingDays.m in Sources */,
+				835961D01CCA1E4600D22A10 /* Adapter.m in Sources */,
 				835961CB1CCA0A4200D22A10 /* NSDateFormatter+StringWithFormat.m in Sources */,
 				835961CC1CCA0A4200D22A10 /* UIAlertView+Error.m in Sources */,
 				835961C11CC9FBEF00D22A10 /* BankObject.m in Sources */,

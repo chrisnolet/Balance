@@ -10,4 +10,6 @@ extern NSString * const kPlaidClientId;
 extern NSString * const kPlaidSecret;
 extern NSString * const kPlaidPublicKey;
 
+extern NSString * const kPlaidBaseURL;
+
 extern NSString * const kUserDefaultsBanks;

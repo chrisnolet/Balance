@@ -8,6 +8,7 @@
 
 #import <Plaid.h>
 #import "AppDelegate.h"
+#import "Adapter.h"
 
 @implementation AppDelegate
 
@@ -19,6 +20,14 @@
 {
     // Initialize Plaid
     [Plaid sharedInstance].publicKey = kPlaidPublicKey;
+
+    // Set up API adapter
+    [Adapter sharedInstance].baseURL = kPlaidBaseURL;
+
+    [Adapter sharedInstance].defaultParameters = @{
+        @"client_id": kPlaidClientId,
+        @"secret": kPlaidSecret
+    };
 
     return YES;
 }

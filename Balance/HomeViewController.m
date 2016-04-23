@@ -7,6 +7,7 @@
 //
 
 #import "HomeViewController.h"
+#import "Adapter.h"
 #import "BankObject.h"
 
 @interface HomeViewController ()
@@ -27,7 +28,7 @@
 {
     [super viewDidLoad];
 
-    // Adjust header placement after toggling in-call status bar
+    // Refresh when re-opened
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(applicationDidBecomeActive:)
                                                  name:UIApplicationDidBecomeActiveNotification
@@ -38,6 +39,15 @@
 - (UIStatusBarStyle)preferredStatusBarStyle
 {
     return UIStatusBarStyleLightContent;
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - NSObject
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -65,12 +75,20 @@
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)linkNavigationContoller:(PLDLinkNavigationViewController *)navigationController
-       didFinishWithAccessToken:(NSString *)accessToken
+       didFinishWithAccessToken:(NSString *)publicToken
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 
-    BankObject *bank = [[BankObject alloc] initWithAccessToken:accessToken];
-    [bank update];
+    [[Adapter sharedInstance] postToEndpoint:@"exchange_token"
+                                  parameters:@{ @"public_token": publicToken }
+                                  completion:^(NSDictionary *results, NSError *error) {
+
+        // Add new bank details
+        //BankObject *bank = [[BankObject alloc] initWithAccessToken:accessToken];
+        //[bank update];
+    }];
+
+    NSLog(@"Public Token: %@", publicToken);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
