@@ -7,8 +7,6 @@
 //
 
 #import "HomeViewController.h"
-#import "Adapter.h"
-#import "BankObject.h"
 
 @interface HomeViewController ()
 
@@ -21,7 +19,7 @@
 @implementation HomeViewController
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-#pragma mark - Public methods
+#pragma mark - UIViewController
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)viewDidLoad
@@ -33,6 +31,8 @@
                                              selector:@selector(applicationDidBecomeActive:)
                                                  name:UIApplicationDidBecomeActiveNotification
                                                object:nil];
+
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -68,55 +68,6 @@
     cell.textLabel.text = @"Transaction";
 
     return cell;
-}
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-#pragma mark - PLDLinkNavigationControllerDelegate
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-- (void)linkNavigationContoller:(PLDLinkNavigationViewController *)navigationController
-       didFinishWithAccessToken:(NSString *)publicToken
-{
-    [self dismissViewControllerAnimated:YES completion:nil];
-
-    [[Adapter sharedInstance] postToEndpoint:@"exchange_token"
-                                  parameters:@{ @"public_token": publicToken }
-                                  completion:^(NSDictionary *results, NSError *error) {
-
-        // Add new bank details
-        BankObject *bank = [[BankObject alloc] initWithAccessToken:results[@"access_token"]];
-
-        [bank update];
-    }];
-}
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-- (void)linkNavigationControllerDidFinishWithBankNotListed:(PLDLinkNavigationViewController *)navigationController
-{
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-- (void)linkNavigationControllerDidCancel:(PLDLinkNavigationViewController *)navigationController
-{
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-#pragma mark - Public methods
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-- (IBAction)addBarButtonItemPressed:(id)sender
-{
-    // Show the Plaid Link modal
-    PLDLinkNavigationViewController *plaidLink = [[PLDLinkNavigationViewController alloc]
-                                                  initWithEnvironment:PlaidEnvironmentTartan
-                                                  product:PlaidProductConnect];
-
-    plaidLink.modalPresentationStyle = UIModalPresentationOverCurrentContext;
-    plaidLink.linkDelegate = self;
-
-    [self presentViewController:plaidLink animated:YES completion:nil];
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

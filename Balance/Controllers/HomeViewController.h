@@ -8,13 +8,9 @@
 
 #import "PLDLinkNavigationViewController.h"
 
-@interface HomeViewController : UIViewController <UITableViewDataSource,
-                                                  UITableViewDelegate,
-                                                  PLDLinkNavigationControllerDelegate>
+@interface HomeViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UILabel *balanceLabel;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
-
-- (IBAction)addBarButtonItemPressed:(id)sender;
 
 @end

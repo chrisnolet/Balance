@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		832A760B1CC9885600FEA998 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 832A760A1CC9885600FEA998 /* main.m */; };
 		832A760E1CC9885600FEA998 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 832A760D1CC9885600FEA998 /* AppDelegate.m */; };
-		832A76111CC9885600FEA998 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 832A76101CC9885600FEA998 /* HomeViewController.m */; };
 		832A76141CC9885600FEA998 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 832A76121CC9885600FEA998 /* Main.storyboard */; };
 		832A76161CC9885600FEA998 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 832A76151CC9885600FEA998 /* Assets.xcassets */; };
 		832A76191CC9885600FEA998 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 832A76171CC9885600FEA998 /* LaunchScreen.storyboard */; };
@@ -23,6 +22,8 @@
 		835961CC1CCA0A4200D22A10 /* UIAlertView+Error.m in Sources */ = {isa = PBXBuildFile; fileRef = 835961C71CCA0A4200D22A10 /* UIAlertView+Error.m */; };
 		835961CD1CCA0A4200D22A10 /* UIButton+ActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 835961C91CCA0A4200D22A10 /* UIButton+ActivityIndicatorView.m */; };
 		835961D01CCA1E4600D22A10 /* Adapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 835961CF1CCA1E4600D22A10 /* Adapter.m */; };
+		835961D31CCC072800D22A10 /* AccountsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 835961D21CCC072800D22A10 /* AccountsTableViewController.m */; };
+		835961D61CCC073E00D22A10 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 835961D51CCC073E00D22A10 /* HomeViewController.m */; };
 		B186E45215A692ADFD5CD891 /* libPods-Balance.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 09DD390A1B78FEDDAAD8E872 /* libPods-Balance.a */; };
 /* End PBXBuildFile section */
 
@@ -32,8 +33,6 @@
 		832A760A1CC9885600FEA998 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		832A760C1CC9885600FEA998 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		832A760D1CC9885600FEA998 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		832A760F1CC9885600FEA998 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
-		832A76101CC9885600FEA998 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		832A76131CC9885600FEA998 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		832A76151CC9885600FEA998 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		832A76181CC9885600FEA998 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -59,6 +58,10 @@
 		835961C91CCA0A4200D22A10 /* UIButton+ActivityIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIButton+ActivityIndicatorView.m"; path = "Categories/UIButton+ActivityIndicatorView.m"; sourceTree = "<group>"; };
 		835961CE1CCA1E4600D22A10 /* Adapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Adapter.h; path = Models/Adapter.h; sourceTree = "<group>"; };
 		835961CF1CCA1E4600D22A10 /* Adapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Adapter.m; path = Models/Adapter.m; sourceTree = "<group>"; };
+		835961D11CCC072800D22A10 /* AccountsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AccountsTableViewController.h; path = Controllers/AccountsTableViewController.h; sourceTree = "<group>"; };
+		835961D21CCC072800D22A10 /* AccountsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccountsTableViewController.m; path = Controllers/AccountsTableViewController.m; sourceTree = "<group>"; };
+		835961D41CCC073E00D22A10 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeViewController.h; path = Controllers/HomeViewController.h; sourceTree = "<group>"; };
+		835961D51CCC073E00D22A10 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeViewController.m; path = Controllers/HomeViewController.m; sourceTree = "<group>"; };
 		883871DB2CE94624EDEBA99B /* Pods-Balance.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Balance.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Balance/Pods-Balance.debug.xcconfig"; sourceTree = "<group>"; };
 		EE6ADE43772F9B4707CF0797 /* Pods-Balance.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Balance.release.xcconfig"; path = "Pods/Target Support Files/Pods-Balance/Pods-Balance.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -160,8 +163,10 @@
 		832A76281CC98D3700FEA998 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				832A760F1CC9885600FEA998 /* HomeViewController.h */,
-				832A76101CC9885600FEA998 /* HomeViewController.m */,
+				835961D41CCC073E00D22A10 /* HomeViewController.h */,
+				835961D51CCC073E00D22A10 /* HomeViewController.m */,
+				835961D11CCC072800D22A10 /* AccountsTableViewController.h */,
+				835961D21CCC072800D22A10 /* AccountsTableViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -316,12 +321,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				832A76111CC9885600FEA998 /* HomeViewController.m in Sources */,
 				835961B71CC9F88F00D22A10 /* UserManager.m in Sources */,
 				835961CD1CCA0A4200D22A10 /* UIButton+ActivityIndicatorView.m in Sources */,
 				835961CA1CCA0A4200D22A10 /* NSDate+DateByAddingDays.m in Sources */,
 				835961D01CCA1E4600D22A10 /* Adapter.m in Sources */,
 				835961CB1CCA0A4200D22A10 /* NSDateFormatter+StringWithFormat.m in Sources */,
+				835961D61CCC073E00D22A10 /* HomeViewController.m in Sources */,
 				835961CC1CCA0A4200D22A10 /* UIAlertView+Error.m in Sources */,
 				835961C11CC9FBEF00D22A10 /* BankObject.m in Sources */,
 				832A760E1CC9885600FEA998 /* AppDelegate.m in Sources */,
@@ -329,6 +334,7 @@
 				832A760B1CC9885600FEA998 /* main.m in Sources */,
 				832A76221CC98B8600FEA998 /* AppConstants.m in Sources */,
 				835961BA1CC9F8D100D22A10 /* TransactionObject.m in Sources */,
+				835961D31CCC072800D22A10 /* AccountsTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
