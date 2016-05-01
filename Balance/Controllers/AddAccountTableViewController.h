@@ -6,8 +6,11 @@
 //  Copyright © 2016 Relaunch. All rights reserved.
 //
 
+#import "BankObject.h"
+
 @interface AddAccountTableViewController : UITableViewController
 
+@property (strong, nonatomic) BankObject *bank;
 @property (strong, nonatomic) NSArray *accounts;
 
 @end

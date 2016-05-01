@@ -9,7 +9,6 @@
 @interface UserManager : NSObject
 
 @property (strong, nonatomic) NSArray *banks;
-@property (strong, nonatomic) NSDecimalNumber *unifiedBalance;
 
 - (void)save;
 

@@ -7,8 +7,10 @@
 //
 
 #import "AccountsTableViewController.h"
+#import "AddAccountTableViewController.h"
 #import "Adapter.h"
 #import "BankObject.h"
+#import "UIAlertView+Error.h"
 
 @implementation AccountsTableViewController
 
@@ -25,6 +27,15 @@
 - (UIStatusBarStyle)preferredStatusBarStyle
 {
     return UIStatusBarStyleLightContent;
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"AddAccountSegue"]) {
+        AddAccountTableViewController *addAccountTableViewController = segue.destinationViewController;
+        addAccountTableViewController.bank = (BankObject *)sender;
+    }
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -108,18 +119,24 @@
 - (void)linkNavigationContoller:(PLDLinkNavigationViewController *)navigationController
        didFinishWithAccessToken:(NSString *)publicToken
 {
-    [self dismissViewControllerAnimated:YES completion:nil];
-    [self performSegueWithIdentifier:@"AddAccountSegue" sender:nil];
+    // Exchange public token for access token
+    [[Adapter sharedInstance] postToEndpoint:@"exchange_token"
+                                  parameters:@{ @"public_token": publicToken }
+                                  completion:^(NSDictionary *results, NSError *error) {
+        if (error) {
+            [self dismissViewControllerAnimated:YES completion:nil];
+            [[UIAlertView alertViewWithError:error] show];
 
-//    [[Adapter sharedInstance] postToEndpoint:@"exchange_token"
-//                                  parameters:@{ @"public_token": publicToken }
-//                                  completion:^(NSDictionary *results, NSError *error) {
-//
-//        // Add new bank details
-//        BankObject *bank = [[BankObject alloc] initWithAccessToken:results[@"access_token"]];
-//
-//        [bank update];
-//    }];
+            return;
+        }
+
+        // Show list of bank accounts
+        BankObject *bank = [[BankObject alloc] initWithAccessToken:results[@"access_token"]];
+
+        [self dismissViewControllerAnimated:YES completion:^{
+            [self performSegueWithIdentifier:@"AddAccountSegue" sender:bank];
+        }];
+    }];
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

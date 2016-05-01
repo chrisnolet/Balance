@@ -187,7 +187,7 @@
         <!--Add Account-->
         <scene sceneID="7hA-a2-Grs">
             <objects>
-                <tableViewController id="QS3-hk-Eds" sceneMemberID="viewController">
+                <tableViewController id="QS3-hk-Eds" customClass="AddAccountTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="55" sectionHeaderHeight="18" sectionFooterHeight="18" id="00h-qr-11h">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

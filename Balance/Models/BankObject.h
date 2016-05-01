@@ -12,6 +12,5 @@
 @property (strong, nonatomic) NSArray *accounts;
 
 - (instancetype)initWithAccessToken:(NSString *)accessToken;
-- (void)update;
 
 @end

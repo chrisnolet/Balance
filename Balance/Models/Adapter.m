@@ -7,7 +7,6 @@
 //
 
 #import "Adapter.h"
-#import "UIAlertView+Error.h"
 
 @interface Adapter ()
 
@@ -67,10 +66,6 @@
         // Return to main thread
         dispatch_async(dispatch_get_main_queue(), ^{
             NSLog(@"%@", results);
-
-            if (error) {
-                return [[UIAlertView alertViewWithError:error] show];
-            }
 
             completion(results, error);
         });

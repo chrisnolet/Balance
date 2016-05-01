@@ -6,9 +6,15 @@
 //  Copyright © 2016 Relaunch. All rights reserved.
 //
 
-@interface TransactionObject : NSObject
+#import <Realm/Realm.h>
 
+@interface TransactionObject : RLMObject
+
+@property (strong, nonatomic) NSString *transactionId;
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *amount;
+@property (strong, nonatomic) NSDate *date;
 
 @end
+
+RLM_ARRAY_TYPE(TransactionObject)
