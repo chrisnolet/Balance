@@ -17,20 +17,20 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="avB-iE-Lvb">
-                                <rect key="frame" x="117" y="80" width="87" height="39"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="avB-iE-Lvb">
+                                <rect key="frame" x="104" y="50" width="125" height="77"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="64"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Balance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ut5-Zd-dVk">
-                                <rect key="frame" x="109" y="127" width="103" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saturday, May 7th" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ut5-Zd-dVk">
+                                <rect key="frame" x="95" y="135" width="130" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="55" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ma4-KF-w2z">
-                                <rect key="frame" x="0.0" y="228" width="320" height="276"/>
+                                <rect key="frame" x="0.0" y="205" width="320" height="299"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
@@ -65,16 +65,24 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="oZz-vu-Y0g"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Hs-vj-6iq">
+                                <rect key="frame" x="76" y="58" width="22" height="43"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="36"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="avB-iE-Lvb" firstAttribute="leading" secondItem="9Hs-vj-6iq" secondAttribute="trailing" constant="6" id="8TG-xX-Ez3"/>
                             <constraint firstAttribute="trailing" secondItem="ma4-KF-w2z" secondAttribute="trailing" id="Afw-uw-X4s"/>
-                            <constraint firstItem="ma4-KF-w2z" firstAttribute="top" secondItem="ut5-Zd-dVk" secondAttribute="bottom" constant="80" id="Eon-Oa-hUy"/>
-                            <constraint firstItem="avB-iE-Lvb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FNA-30-wo1"/>
+                            <constraint firstItem="ma4-KF-w2z" firstAttribute="top" secondItem="ut5-Zd-dVk" secondAttribute="bottom" constant="50" id="Eon-Oa-hUy"/>
+                            <constraint firstItem="avB-iE-Lvb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="6" id="FNA-30-wo1"/>
                             <constraint firstItem="ut5-Zd-dVk" firstAttribute="top" secondItem="avB-iE-Lvb" secondAttribute="bottom" constant="8" id="IbL-on-7vp"/>
-                            <constraint firstItem="avB-iE-Lvb" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="80" id="MJE-N4-Wyy"/>
+                            <constraint firstItem="avB-iE-Lvb" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="MJE-N4-Wyy"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ma4-KF-w2z" secondAttribute="bottom" id="Op0-CP-JpG"/>
                             <constraint firstItem="ma4-KF-w2z" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="VHY-wL-i2Y"/>
+                            <constraint firstItem="9Hs-vj-6iq" firstAttribute="top" secondItem="avB-iE-Lvb" secondAttribute="top" constant="8" id="lh7-hm-ZaA"/>
                             <constraint firstItem="ut5-Zd-dVk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vBn-t1-vOl"/>
                         </constraints>
                     </view>
@@ -103,7 +111,6 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" textLabel="8MV-X1-feT" detailTextLabel="j0J-0o-J6g" style="IBUITableViewCellStyleValue1" id="Lgc-h2-UHb">
                                 <rect key="frame" x="0.0" y="50" width="320" height="55"/>
@@ -129,6 +136,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <edgeInsets key="layoutMargins" top="8" left="0.0" bottom="8" right="8"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="AddCell" textLabel="GYT-gm-fwM" style="IBUITableViewCellStyleDefault" id="rvG-Vj-yap">
                                 <rect key="frame" x="0.0" y="105" width="320" height="55"/>
@@ -147,6 +155,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <edgeInsets key="layoutMargins" top="8" left="0.0" bottom="8" right="8"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -192,7 +201,6 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="L5a-2I-WUm" detailTextLabel="jR5-08-rJk" style="IBUITableViewCellStyleValue1" id="iG3-eZ-2Li">
                                 <rect key="frame" x="0.0" y="50" width="320" height="55"/>
@@ -218,6 +226,10 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <edgeInsets key="layoutMargins" top="8" left="0.0" bottom="8" right="8"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <connections>
+                                    <segue destination="8dE-8D-vwR" kind="unwind" identifier="UnwindFromAddAccountSegue" unwindAction="unwindFromAddAccountSegue:" id="iJ7-u7-Zbd"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -226,9 +238,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Add Account" id="drQ-WA-5T6"/>
-                    <connections>
-                        <segue destination="8dE-8D-vwR" kind="unwind" identifier="UnwindFromAddAccountSegue" unwindAction="unwindFromAddAccountSegue:" id="buM-Dx-WaS"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NSr-WK-kNh" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="8dE-8D-vwR" userLabel="Exit" sceneMemberID="exit"/>

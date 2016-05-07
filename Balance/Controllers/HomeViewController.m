@@ -11,6 +11,7 @@
 #import "AccountManager.h"
 #import "AccountObject.h"
 #import "TransactionObject.h"
+#import "NSDateFormatter+DateFormat.h"
 
 @interface HomeViewController ()
 
@@ -118,13 +119,13 @@
 
     // Format the result
     NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
-    numberFormatter.numberStyle = NSNumberFormatterCurrencyStyle;
+    numberFormatter.numberStyle = kCFNumberFormatterDecimalStyle;
     numberFormatter.maximumFractionDigits = 0;
 
     self.balanceLabel.text = [numberFormatter stringFromNumber:@(unifiedBalance)];
 
     // Display the date
-    // TODO(CN): Add date
+    self.dateLabel.text = [NSDateFormatter stringFromDate:[NSDate date] dateFormat:@"EEEE, MMMM d"];
 
     // Reload transactions
     [self.tableView reloadData];

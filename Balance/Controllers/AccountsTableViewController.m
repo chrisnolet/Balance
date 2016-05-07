@@ -118,6 +118,21 @@
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
+{
+    switch (section) {
+
+        // Account
+        case 0:
+            return nil;
+
+        // Add account
+        default:
+            return @"Made with <3 by Chris Nolet © 2016";
+    }
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Swipe to delete accounts
