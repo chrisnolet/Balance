@@ -10,4 +10,6 @@
 
 @interface AccountsTableViewController : UITableViewController <PLDLinkNavigationControllerDelegate>
 
+- (IBAction)unwindFromAddAccountSegue:(UIStoryboardSegue *)unwindSegue;
+
 @end

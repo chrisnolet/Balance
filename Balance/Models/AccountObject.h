@@ -16,13 +16,15 @@
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *number;
 @property (strong, nonatomic) NSString *type;
-@property (strong, nonatomic) NSString *availableBalance;
-@property (strong, nonatomic) NSString *currentBalance;
+@property (strong, nonatomic) NSNumber<RLMDouble> *availableBalance;
+@property (strong, nonatomic) NSNumber<RLMDouble> *currentBalance;
 @property (strong, nonatomic) RLMArray<TransactionObject *><TransactionObject> *transactions;
 
-+ (void)accountsForAccessToken:(NSString *)accessToken completion:(void (^)(NSArray *accounts, NSError *error))completion;
+@property (nonatomic, readonly) double signedBalance;
+@property (nonatomic, readonly) NSString *formattedBalance;
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary accessToken:(NSString *)accessToken;
-- (double)signedBalance;
+- (void)save;
+- (void)remove;
 
 @end

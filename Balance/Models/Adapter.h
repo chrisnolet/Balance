@@ -6,8 +6,6 @@
 //  Copyright © 2016 Relaunch. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
 @interface Adapter : NSObject
 
 @property (strong, nonatomic) NSString *baseURL;

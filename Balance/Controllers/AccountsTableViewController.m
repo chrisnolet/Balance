@@ -6,11 +6,20 @@
 //  Copyright © 2016 Relaunch. All rights reserved.
 //
 
+#import <Realm/Realm.h>
 #import "AccountsTableViewController.h"
 #import "AddAccountTableViewController.h"
 #import "Adapter.h"
-#import "BankObject.h"
+#import "AccountManager.h"
+#import "AccountObject.h"
 #import "UIAlertView+Error.h"
+
+@interface AccountsTableViewController ()
+
+@property (strong, nonatomic) RLMResults<AccountObject *> *accounts;
+@property (strong, nonatomic) RLMNotificationToken *notificationToken;
+
+@end
 
 @implementation AccountsTableViewController
 
@@ -21,6 +30,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    // Load accounts
+    self.accounts = [AccountObject allObjects];
+
+    // Refresh when accounts are updated
+    typeof(self) __weak weakSelf = self;
+
+    self.notificationToken = [[RLMRealm defaultRealm] addNotificationBlock:^(NSString *notification, RLMRealm *realm) {
+        [weakSelf.tableView reloadData];
+    }];
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -34,8 +53,17 @@
 {
     if ([segue.identifier isEqualToString:@"AddAccountSegue"]) {
         AddAccountTableViewController *addAccountTableViewController = segue.destinationViewController;
-        addAccountTableViewController.bank = (BankObject *)sender;
+        addAccountTableViewController.accounts = (NSArray *)sender;
     }
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - NSObject
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+- (void)dealloc
+{
+    [self.notificationToken stop];
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -50,22 +78,37 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    switch (section) {
+
+        // Account
+        case 0:
+            return [self.accounts count];
+
+        // Add account
+        default:
+            return 1;
+    }
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     switch (indexPath.section) {
+
+        // Account
         case 0: {
             static NSString *cellIdentifier = @"Cell";
 
+            AccountObject *account = self.accounts[indexPath.row];
+
             UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
-            cell.textLabel.text = @"Account";
+            cell.textLabel.text = account.name;
+            cell.detailTextLabel.text = account.formattedBalance;
 
             return cell;
         }
 
+        // Add account
         default: {
             static NSString *cellIdentifier = @"AddCell";
 
@@ -77,6 +120,7 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    // Swipe to delete accounts
     return (indexPath.section == 0);
 }
 
@@ -84,8 +128,11 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
                                             forRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    // Remove the account
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // TODO(CN): Remove account
+        AccountObject *account = self.accounts[indexPath.row];
+
+        [account remove];
     }
 }
 
@@ -100,7 +147,7 @@
     // Add account
     if (indexPath.section == 1) {
 
-        // Show the Plaid Link view controller
+        // Show the bank selection modal
         PLDLinkNavigationViewController *plaidLink = [[PLDLinkNavigationViewController alloc]
                                                       initWithEnvironment:PlaidEnvironmentTartan
                                                       product:PlaidProductConnect];
@@ -130,11 +177,20 @@
             return;
         }
 
-        // Show list of bank accounts
-        BankObject *bank = [[BankObject alloc] initWithAccessToken:results[@"access_token"]];
+        [[AccountManager sharedInstance] accountsForAccessToken:results[@"access_token"]
+                                                     completion:^(NSArray *accounts, NSError *error) {
+            if (error) {
+                [self dismissViewControllerAnimated:YES completion:nil];
+                [[UIAlertView alertViewWithError:error] show];
 
-        [self dismissViewControllerAnimated:YES completion:^{
-            [self performSegueWithIdentifier:@"AddAccountSegue" sender:bank];
+                return;
+            }
+
+
+            // Show list of bank accounts
+            [self dismissViewControllerAnimated:YES completion:^{
+                [self performSegueWithIdentifier:@"AddAccountSegue" sender:accounts];
+            }];
         }];
     }];
 }
@@ -152,8 +208,11 @@
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-#pragma mark - Private methods
+#pragma mark - Public methods
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+- (IBAction)unwindFromAddAccountSegue:(UIStoryboardSegue *)unwindSegue
+{
+}
 
 @end

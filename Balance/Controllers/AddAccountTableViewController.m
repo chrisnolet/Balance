@@ -7,6 +7,7 @@
 //
 
 #import "AddAccountTableViewController.h"
+#import "AccountObject.h"
 
 @implementation AddAccountTableViewController
 
@@ -31,7 +32,7 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    return [self.accounts count];
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -39,10 +40,27 @@
 {
     static NSString *cellIdentifier = @"Cell";
 
+    AccountObject *account = self.accounts[indexPath.row];
+
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
-    cell.textLabel.text = @"Account";
+    cell.textLabel.text = account.name;
+    cell.detailTextLabel.text = account.formattedBalance;
 
     return cell;
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - UITableViewDelegate
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Save the account
+    AccountObject *account = self.accounts[indexPath.row];
+
+    [account save];
+
+    [self performSegueWithIdentifier:@"UnwindFromAddAccountSegue" sender:nil];
 }
 
 @end

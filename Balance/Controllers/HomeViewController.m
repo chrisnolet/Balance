@@ -8,6 +8,7 @@
 
 #import <Realm/Realm.h>
 #import "HomeViewController.h"
+#import "AccountManager.h"
 #import "AccountObject.h"
 #import "TransactionObject.h"
 
@@ -18,7 +19,7 @@
 @property (strong, nonatomic) RLMNotificationToken *notificationToken;
 
 - (void)applicationDidBecomeActive:(NSNotification *)notification;
-- (void)refresh;
+- (void)refreshUserInterface;
 
 @end
 
@@ -32,28 +33,28 @@
 {
     [super viewDidLoad];
 
-    // Refresh when re-opened
+    // Load accounts and transactions
+    self.accounts = [AccountObject allObjects];
+    self.transactions = [TransactionObject allObjectsByDate];
+
+    // Set up user interface
+    [self refreshUserInterface];
+
+    // Refresh when accounts are updated
+    typeof(self) __weak weakSelf = self;
+
+    self.notificationToken = [[RLMRealm defaultRealm] addNotificationBlock:^(NSString *notification, RLMRealm *realm) {
+        [weakSelf refreshUserInterface];
+    }];
+
+    // Update accounts
+    [[AccountManager sharedInstance] updateAccounts];
+
+    // Update when re-opened
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(applicationDidBecomeActive:)
                                                  name:UIApplicationDidBecomeActiveNotification
                                                object:nil];
-
-    // Set up Realm queries
-    self.accounts = [AccountObject allObjects];
-    self.transactions = [TransactionObject allObjects];
-
-    // Sort transactions by date
-    [self.transactions sortedResultsUsingProperty:NSStringFromSelector(@selector(date)) ascending:NO];
-
-    // Update unified balance when new accounts are added
-    RLMRealm *realm = [RLMRealm defaultRealm];
-    typeof(self) __weak weakSelf = self;
-
-    self.notificationToken = [realm addNotificationBlock:^(NSString *notification, RLMRealm *realm) {
-        [weakSelf refresh];
-    }];
-
-    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -68,6 +69,8 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)dealloc
 {
+    [self.notificationToken stop];
+
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
@@ -85,8 +88,11 @@
 {
     static NSString *cellIdentifier = @"Cell";
 
+    TransactionObject *transaction = self.transactions[indexPath.row];
+
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
-    cell.textLabel.text = @"Transaction";
+    cell.textLabel.text = transaction.name;
+    cell.detailTextLabel.text = transaction.formattedAmount;
 
     return cell;
 }
@@ -97,17 +103,17 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)applicationDidBecomeActive:(NSNotification *)notification
 {
-    [self.tableView reloadData];
+    [[AccountManager sharedInstance] updateAccounts];
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-- (void)refresh
+- (void)refreshUserInterface
 {
     // Calculate the total balance
     double unifiedBalance = 0.0;
 
     for (AccountObject *account in self.accounts) {
-        unifiedBalance += [account signedBalance];
+        unifiedBalance += account.signedBalance;
     }
 
     // Format the result
@@ -116,6 +122,9 @@
     numberFormatter.maximumFractionDigits = 0;
 
     self.balanceLabel.text = [numberFormatter stringFromNumber:@(unifiedBalance)];
+
+    // Display the date
+    // TODO(CN): Add date
 
     // Reload transactions
     [self.tableView reloadData];

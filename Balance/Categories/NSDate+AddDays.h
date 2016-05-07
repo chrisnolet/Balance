@@ -1,5 +1,5 @@
 //
-//  NSDate+DateByAddingDays.h
+//  NSDate+AddDays.h
 //  Balance
 //
 //  Created by Chris Nolet on 4/22/16.
@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NSDate (OneWeekAgo)
+@interface NSDate (AddDays)
 
-- (NSDate *)oneWeekAgo;
+- (NSDate *)dateByAddingDays:(NSInteger)days;
 
 @end

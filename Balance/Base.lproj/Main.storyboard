@@ -226,8 +226,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Add Account" id="drQ-WA-5T6"/>
+                    <connections>
+                        <segue destination="8dE-8D-vwR" kind="unwind" identifier="UnwindFromAddAccountSegue" unwindAction="unwindFromAddAccountSegue:" id="buM-Dx-WaS"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NSr-WK-kNh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="8dE-8D-vwR" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1027" y="334"/>
         </scene>

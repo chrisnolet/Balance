@@ -1,5 +1,5 @@
 //
-//  NSDateFormatter+StringWithFormat.h
+//  NSDateFormatter+DateFormat.h
 //  Balance
 //
 //  Created by Chris Nolet on 6/2/15.
@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NSDateFormatter (StringWithFormat)
+@interface NSDateFormatter (DateFormat)
 
 + (NSString *)stringFromDate:(NSDate *)date dateFormat:(NSString *)dateFormat;
++ (NSDate *)dateFromString:(NSString *)string dateFormat:(NSString *)dateFormat;
 
 @end

@@ -6,10 +6,11 @@
 //  Copyright © 2016 Relaunch. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
 @interface AccountManager : NSObject
 
 + (instancetype)sharedInstance;
+
+- (void)updateAccounts;
+- (void)accountsForAccessToken:(NSString *)accessToken completion:(void (^)(NSArray *accounts, NSError *error))completion;
 
 @end

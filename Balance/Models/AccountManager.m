@@ -6,9 +6,18 @@
 //  Copyright © 2016 Relaunch. All rights reserved.
 //
 
+#import <Realm/Realm.h>
 #import "AccountManager.h"
 #import "Adapter.h"
 #import "AccountObject.h"
+
+@interface AccountManager ()
+
+- (void)accountForAccessToken:(NSString *)accessToken
+                    accountId:(NSString *)accountId
+                   completion:(void (^)(AccountObject *account))completion;
+
+@end
 
 @implementation AccountManager
 
@@ -32,11 +41,31 @@
 #pragma mark - Public methods
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-- (void)accountsForAccessTokens:(NSArray *)accessTokens
-                     accountIds:(NSArray *)accountIds
-                     completion:(void (^)(NSArray *accounts, NSError *error))completion
+- (void)updateAccounts;
 {
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    RLMResults *accounts = [AccountObject allObjects];
 
+    [realm beginWriteTransaction];
+
+    // Create a dispatch group
+    dispatch_group_t group = dispatch_group_create();
+
+    // Update each account asyncronously
+    for (AccountObject *account in accounts) {
+        dispatch_group_enter(group);
+
+        [self accountForAccessToken:account.accessToken accountId:account.accountId completion:^(AccountObject *account) {
+            [realm addOrUpdateObject:account];
+
+            dispatch_group_leave(group);
+        }];
+    }
+
+    // Close out the transaction
+    dispatch_group_notify(group, dispatch_get_main_queue(), ^{
+        [realm commitWriteTransaction];
+    });
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -53,7 +82,29 @@
             [accounts addObject:[[AccountObject alloc] initWithDictionary:account accessToken:accessToken]];
         }
 
-        completion(accounts, error);
+        completion([accounts copy], error);
+    }];
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - Private methods
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+- (void)accountForAccessToken:(NSString *)accessToken
+                    accountId:(NSString *)accountId
+                   completion:(void (^)(AccountObject *account))completion
+{
+    [self accountsForAccessToken:accessToken completion:^(NSArray *accounts, NSError *error) {
+
+        // Find and return the relevant account
+        for (AccountObject *account in accounts) {
+            if ([account.accountId isEqualToString:accountId]) {
+                return completion(account);
+            }
+        }
+
+        // Otherwise return nil
+        completion(nil);
     }];
 }
 

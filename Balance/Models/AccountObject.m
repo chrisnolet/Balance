@@ -7,7 +7,6 @@
 //
 
 #import "AccountObject.h"
-#import "Adapter.h"
 
 @implementation AccountObject
 
@@ -17,28 +16,7 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 + (NSString *)primaryKey
 {
-    return NSStringFromSelector(@selector(accountId));
-}
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-#pragma mark - Class methods
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-+ (void)accountsForAccessToken:(NSString *)accessToken completion:(void (^)(NSArray *accounts, NSError *error))completion
-{
-    [[Adapter sharedInstance] postToEndpoint:@"balance"
-                                  parameters:@{ @"access_token": accessToken }
-                                  completion:^(NSDictionary *results, NSError *error) {
-
-        // Populate accounts
-        NSMutableArray *accounts = [NSMutableArray array];
-
-        for (NSDictionary *account in results[@"accounts"]) {
-            [accounts addObject:[[AccountObject alloc] initWithDictionary:account accessToken:accessToken]];
-        }
-
-        completion(accounts, error);
-    }];
+    return @"accountId";
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -63,7 +41,7 @@
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-#pragma mark - Public methods
+#pragma mark - Property methods
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 - (double)signedBalance
@@ -77,11 +55,47 @@
     }
 
     // Return a positive balance for checking and savings accounts
-    NSString *balance = self.availableBalance ?: self.currentBalance;
+    NSNumber *balance = self.availableBalance ?: self.currentBalance;
 
     return [balance doubleValue];
 
     // TODO(CN): Consider subtracting pending charges from self.transactions
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+- (NSString *)formattedBalance
+{
+    // Format the signed balance
+    NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+    numberFormatter.numberStyle = NSNumberFormatterCurrencyStyle;
+    numberFormatter.minimumFractionDigits = 2;
+    numberFormatter.maximumFractionDigits = 2;
+    numberFormatter.alwaysShowsDecimalSeparator = YES;
+
+    return [numberFormatter stringFromNumber:@(self.signedBalance)];
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - Public methods
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+- (void)save
+{
+    RLMRealm *realm = [RLMRealm defaultRealm];
+
+    [realm beginWriteTransaction];
+    [realm addOrUpdateObject:self];
+    [realm commitWriteTransaction];
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+- (void)remove
+{
+    RLMRealm *realm = [RLMRealm defaultRealm];
+
+    [realm beginWriteTransaction];
+    [realm deleteObject:self];
+    [realm commitWriteTransaction];
 }
 
 @end
