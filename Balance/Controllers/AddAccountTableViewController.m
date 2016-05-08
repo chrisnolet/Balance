@@ -65,7 +65,7 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 - (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
 {
-    return @"Select an account that you would like to add to your home screen.";
+    return @"Select an account that you would like to add to your balance.";
 }
 
 @end

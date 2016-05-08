@@ -18,9 +18,6 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Initialize Plaid
-    [Plaid sharedInstance].publicKey = kPlaidPublicKey;
-
     // Set up API adapter
     [Adapter sharedInstance].baseURL = kPlaidBaseURL;
 
@@ -29,13 +26,15 @@
         @"secret": kPlaidSecret
     };
 
+    // Initialize Plaid
+    [Plaid sharedInstance].publicKey = kPlaidPublicKey;
+
     return YES;
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
-
 }
 
 @end
