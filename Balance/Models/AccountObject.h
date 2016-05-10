@@ -18,7 +18,6 @@
 @property (strong, nonatomic) NSString *type;
 @property (strong, nonatomic) NSNumber<RLMDouble> *availableBalance;
 @property (strong, nonatomic) NSNumber<RLMDouble> *currentBalance;
-@property (strong, nonatomic) RLMArray<TransactionObject *><TransactionObject> *transactions;
 
 @property (nonatomic, readonly) double signedBalance;
 @property (nonatomic, readonly) NSString *formattedBalance;

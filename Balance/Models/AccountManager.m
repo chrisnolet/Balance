@@ -47,15 +47,15 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)updateAccounts
 {
-    RLMRealm *realm = [RLMRealm defaultRealm];
     RLMResults *accounts = [AccountObject allObjects];
+    RLMResults *transactions = [TransactionObject allObjects];
 
-    [realm beginWriteTransaction];
+    NSMutableArray *updates = [NSMutableArray array];
 
     // Create a dispatch group
     dispatch_group_t group = dispatch_group_create();
 
-    // Update each account asyncronously
+    // Fetch each account asyncronously
     for (AccountObject *account in accounts) {
         dispatch_group_enter(group);
 
@@ -63,15 +63,23 @@
                           accountId:account.accountId
                          completion:^(AccountObject *account, NSArray *transactions, NSError *error) {
 
-            // Update the account
-            [realm addOrUpdateObject:account];
+            // Store the account and transaction details
+            if (account) {
+                [updates addObject:account];
+                [updates addObjectsFromArray:transactions];
+            }
 
             dispatch_group_leave(group);
         }];
     }
 
-    // Close out the transaction
+    // Write all the changes at once
     dispatch_group_notify(group, dispatch_get_main_queue(), ^{
+        RLMRealm *realm = [RLMRealm defaultRealm];
+
+        [realm beginWriteTransaction];
+        [realm deleteObjects:transactions];
+        [realm addOrUpdateObjectsFromArray:updates];
         [realm commitWriteTransaction];
     });
 }
@@ -84,7 +92,7 @@
                                   completion:^(NSDictionary *results, NSError *error) {
 
         // Populate accounts
-        NSMutableArray *accounts = [NSMutableArray arrayWithCapacity:[results[@"accounts"] count]];
+        NSMutableArray *accounts = [NSMutableArray array];
 
         for (NSDictionary *dictionary in results[@"accounts"]) {
             [accounts addObject:[[AccountObject alloc] initWithDictionary:dictionary accessToken:accessToken]];
@@ -111,13 +119,19 @@
         @"gte": [NSDateFormatter stringFromDate:startDate dateFormat:@"yyyy-MM-dd"]
     };
 
+    NSDictionary *parameters = @{
+        @"access_token": accessToken,
+        @"options": [options stringValue]
+    };
+
     // Get account and transaction details
     [[Adapter sharedInstance] postToEndpoint:@"connect/get"
-                                  parameters:@{ @"access_token": accessToken, @"options": [options stringValue] }
+                                  parameters:parameters
                                   completion:^(NSDictionary *results, NSError *error) {
 
-        // Retrieve the relevant account
+        // Find the relevant account
         AccountObject *account;
+        NSMutableArray *transactions = [NSMutableArray array];
 
         for (NSDictionary *dictionary in results[@"accounts"]) {
             if ([dictionary[@"_id"] isEqualToString:accountId]) {
@@ -126,8 +140,6 @@
         }
 
         // Populate transactions
-        NSMutableArray *transactions = [NSMutableArray arrayWithCapacity:[results[@"transactions"] count]];
-
         for (NSDictionary *dictionary in results[@"transactions"]) {
             [transactions addObject:[[TransactionObject alloc] initWithDictionary:dictionary]];
         }

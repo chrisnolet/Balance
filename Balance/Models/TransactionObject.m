@@ -41,6 +41,7 @@
 
     if (self) {
         self.transactionId = dictionary[@"_id"];
+        self.accountId = dictionary[@"_account"];
         self.name = dictionary[@"name"];
         self.amount = dictionary[@"amount"];
         self.date = [NSDateFormatter dateFromString:dictionary[@"date"] dateFormat:@"yyyy-MM-dd"];

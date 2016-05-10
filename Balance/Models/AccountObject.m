@@ -95,6 +95,9 @@
 
     [realm beginWriteTransaction];
     [realm deleteObject:self];
+
+    // TODO(CN): Remove associated transactions
+
     [realm commitWriteTransaction];
 }
 
