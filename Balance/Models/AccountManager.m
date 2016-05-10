@@ -10,12 +10,16 @@
 #import "AccountManager.h"
 #import "Adapter.h"
 #import "AccountObject.h"
+#import "TransactionObject.h"
+#import "NSDate+AddDays.h"
+#import "NSDateFormatter+DateFormat.h"
+#import "NSDictionary+StringValue.h"
 
 @interface AccountManager ()
 
 - (void)accountForAccessToken:(NSString *)accessToken
                     accountId:(NSString *)accountId
-                   completion:(void (^)(AccountObject *account, NSError *error))completion;
+                   completion:(void (^)(AccountObject *account, NSArray *transactions, NSError *error))completion;
 
 @end
 
@@ -57,7 +61,7 @@
 
         [self accountForAccessToken:account.accessToken
                           accountId:account.accountId
-                         completion:^(AccountObject *account, NSError *error) {
+                         completion:^(AccountObject *account, NSArray *transactions, NSError *error) {
 
             // Update the account
             [realm addOrUpdateObject:account];
@@ -80,10 +84,10 @@
                                   completion:^(NSDictionary *results, NSError *error) {
 
         // Populate accounts
-        NSMutableArray *accounts = [NSMutableArray array];
+        NSMutableArray *accounts = [NSMutableArray arrayWithCapacity:[results[@"accounts"] count]];
 
-        for (NSDictionary *account in results[@"accounts"]) {
-            [accounts addObject:[[AccountObject alloc] initWithDictionary:account accessToken:accessToken]];
+        for (NSDictionary *dictionary in results[@"accounts"]) {
+            [accounts addObject:[[AccountObject alloc] initWithDictionary:dictionary accessToken:accessToken]];
         }
 
         completion([accounts copy], error);
@@ -96,19 +100,39 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)accountForAccessToken:(NSString *)accessToken
                     accountId:(NSString *)accountId
-                   completion:(void (^)(AccountObject *account, NSError *error))completion
+                   completion:(void (^)(AccountObject *account, NSArray *transactions, NSError *error))completion
 {
-    [self accountsForAccessToken:accessToken completion:^(NSArray *accounts, NSError *error) {
+    // Filter transactions by account and date
+    NSDate *startDate = [[NSDate date] dateByAddingDays:-kTransactionsNumberOfDays];
 
-        // Find and return the relevant account
-        for (AccountObject *account in accounts) {
-            if ([account.accountId isEqualToString:accountId]) {
-                return completion(account, error);
+    NSDictionary *options = @{
+        @"account": accountId,
+        @"pending": @(YES),
+        @"gte": [NSDateFormatter stringFromDate:startDate dateFormat:@"yyyy-MM-dd"]
+    };
+
+    // Get account and transaction details
+    [[Adapter sharedInstance] postToEndpoint:@"connect/get"
+                                  parameters:@{ @"access_token": accessToken, @"options": [options stringValue] }
+                                  completion:^(NSDictionary *results, NSError *error) {
+
+        // Retrieve the relevant account
+        AccountObject *account;
+
+        for (NSDictionary *dictionary in results[@"accounts"]) {
+            if ([dictionary[@"_id"] isEqualToString:accountId]) {
+                account = [[AccountObject alloc] initWithDictionary:dictionary accessToken:accessToken];
             }
         }
 
-        // Otherwise return nil
-        completion(nil, error);
+        // Populate transactions
+        NSMutableArray *transactions = [NSMutableArray arrayWithCapacity:[results[@"transactions"] count]];
+
+        for (NSDictionary *dictionary in results[@"transactions"]) {
+            [transactions addObject:[[TransactionObject alloc] initWithDictionary:dictionary]];
+        }
+
+        completion(account, [transactions copy], error);
     }];
 }
 
