@@ -28,7 +28,7 @@
 {
     RLMResults *results = [self allObjects];
 
-    return [results sortedResultsUsingProperty:@"date" ascending:YES];
+    return [results sortedResultsUsingProperty:@"date" ascending:NO];
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

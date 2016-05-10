@@ -15,7 +15,7 @@
 
 - (void)accountForAccessToken:(NSString *)accessToken
                     accountId:(NSString *)accountId
-                   completion:(void (^)(AccountObject *account))completion;
+                   completion:(void (^)(AccountObject *account, NSError *error))completion;
 
 @end
 
@@ -41,7 +41,7 @@
 #pragma mark - Public methods
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-- (void)updateAccounts;
+- (void)updateAccounts
 {
     RLMRealm *realm = [RLMRealm defaultRealm];
     RLMResults *accounts = [AccountObject allObjects];
@@ -55,7 +55,11 @@
     for (AccountObject *account in accounts) {
         dispatch_group_enter(group);
 
-        [self accountForAccessToken:account.accessToken accountId:account.accountId completion:^(AccountObject *account) {
+        [self accountForAccessToken:account.accessToken
+                          accountId:account.accountId
+                         completion:^(AccountObject *account, NSError *error) {
+
+            // Update the account
             [realm addOrUpdateObject:account];
 
             dispatch_group_leave(group);
@@ -92,19 +96,19 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)accountForAccessToken:(NSString *)accessToken
                     accountId:(NSString *)accountId
-                   completion:(void (^)(AccountObject *account))completion
+                   completion:(void (^)(AccountObject *account, NSError *error))completion
 {
     [self accountsForAccessToken:accessToken completion:^(NSArray *accounts, NSError *error) {
 
         // Find and return the relevant account
         for (AccountObject *account in accounts) {
             if ([account.accountId isEqualToString:accountId]) {
-                return completion(account);
+                return completion(account, error);
             }
         }
 
         // Otherwise return nil
-        completion(nil);
+        completion(nil, error);
     }];
 }
 

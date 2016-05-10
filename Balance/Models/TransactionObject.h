@@ -22,4 +22,6 @@ RLM_ARRAY_TYPE(TransactionObject)
 
 + (RLMResults *)allObjectsByDate;
 
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary;
+
 @end

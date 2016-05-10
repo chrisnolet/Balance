@@ -10,3 +10,5 @@ extern NSString * const kPlaidBaseURL;
 extern NSString * const kPlaidClientId;
 extern NSString * const kPlaidSecret;
 extern NSString * const kPlaidPublicKey;
+
+extern NSInteger const kTransactionsNumberOfDays;

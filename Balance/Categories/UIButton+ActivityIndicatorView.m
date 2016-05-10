@@ -6,8 +6,8 @@
 //  Copyright © 2016 Relaunch. All rights reserved.
 //
 
-#import "UIButton+ActivityIndicatorView.h"
 #import <objc/runtime.h>
+#import "UIButton+ActivityIndicatorView.h"
 
 static void *ActivityIndicatorViewKey = &ActivityIndicatorViewKey;
 
