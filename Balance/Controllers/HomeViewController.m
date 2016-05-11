@@ -39,6 +39,9 @@
     self.transactions = [TransactionObject allObjectsByDate];
 
     // Set up user interface
+    self.tableView.contentInset = UIEdgeInsetsMake(self.headerView.frame.size.height, 0, 0, 0);
+    self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
+
     [self refreshUserInterface];
 
     // Refresh when accounts are updated
