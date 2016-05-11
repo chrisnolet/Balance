@@ -238,7 +238,13 @@
                             <outlet property="delegate" destination="QS3-hk-Eds" id="Npw-J6-4vb"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Add Account" id="drQ-WA-5T6"/>
+                    <navigationItem key="navigationItem" title="Add Account" id="drQ-WA-5T6">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="IrZ-qs-s7w">
+                            <connections>
+                                <action selector="cancelBarButtonItemPressed:" destination="QS3-hk-Eds" id="9vZ-j1-bf6"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NSr-WK-kNh" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="8dE-8D-vwR" userLabel="Exit" sceneMemberID="exit"/>

@@ -92,7 +92,7 @@
     TransactionObject *transaction = self.transactions[indexPath.row];
 
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
-    cell.textLabel.text = transaction.name;
+    cell.textLabel.text = transaction.formattedName;
     cell.detailTextLabel.text = transaction.formattedAmount;
 
     return cell;

@@ -40,11 +40,6 @@
     self.notificationToken = [[RLMRealm defaultRealm] addNotificationBlock:^(NSString *notification, RLMRealm *realm) {
         [weakSelf.tableView reloadData];
     }];
-
-    // Set up navigation bar
-    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
-                                                                                          target:nil
-                                                                                          action:nil];
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

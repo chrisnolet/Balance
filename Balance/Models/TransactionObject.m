@@ -54,6 +54,22 @@
 #pragma mark - Property methods
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+- (NSString *)formattedName
+{
+    // Display generic titles for unnamed transactions
+    if ([self.name length] <= 1) {
+        return @"Transaction";
+    }
+
+    // Normalize uppercase names
+    if ([[self.name uppercaseString] isEqualToString:self.name] && [self.name length] >= 3) {
+        return [self.name capitalizedString];
+    }
+
+    return self.name;
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 - (double)signedAmount
 {
     // Return negative amounts for outgoing amounts
