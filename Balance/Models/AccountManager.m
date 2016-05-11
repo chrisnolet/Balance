@@ -19,7 +19,7 @@
 
 - (void)accountForAccessToken:(NSString *)accessToken
                     accountId:(NSString *)accountId
-                   completion:(void (^)(AccountObject *account, NSArray *transactions, NSError *error))completion;
+                   completion:(void (^)(AccountObject *account, NSError *error))completion;
 
 @end
 
@@ -61,12 +61,11 @@
 
         [self accountForAccessToken:account.accessToken
                           accountId:account.accountId
-                         completion:^(AccountObject *account, NSArray *transactions, NSError *error) {
+                         completion:^(AccountObject *account, NSError *error) {
 
             // Store the account and transaction details
             if (account) {
                 [updates addObject:account];
-                [updates addObjectsFromArray:transactions];
             }
 
             dispatch_group_leave(group);
@@ -108,7 +107,7 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)accountForAccessToken:(NSString *)accessToken
                     accountId:(NSString *)accountId
-                   completion:(void (^)(AccountObject *account, NSArray *transactions, NSError *error))completion
+                   completion:(void (^)(AccountObject *account, NSError *error))completion
 {
     // Filter transactions by account and date
     NSDate *startDate = [[NSDate date] dateByAddingDays:-kTransactionsNumberOfDays];
@@ -131,7 +130,6 @@
 
         // Find the relevant account
         AccountObject *account;
-        NSMutableArray *transactions = [NSMutableArray array];
 
         for (NSDictionary *dictionary in results[@"accounts"]) {
             if ([dictionary[@"_id"] isEqualToString:accountId]) {
@@ -139,12 +137,12 @@
             }
         }
 
-        // Populate transactions
+        // Add transactions
         for (NSDictionary *dictionary in results[@"transactions"]) {
-            [transactions addObject:[[TransactionObject alloc] initWithDictionary:dictionary]];
+            [account.transactions addObject:[[TransactionObject alloc] initWithDictionary:dictionary]];
         }
 
-        completion(account, [transactions copy], error);
+        completion(account, error);
     }];
 }
 

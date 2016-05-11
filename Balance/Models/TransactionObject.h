@@ -8,10 +8,11 @@
 
 #import <Realm/Realm.h>
 
+RLM_ARRAY_TYPE(TransactionObject)
+
 @interface TransactionObject : RLMObject
 
 @property (strong, nonatomic) NSString *transactionId;
-@property (strong, nonatomic) NSString *accountId;
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSDate *date;
 @property (strong, nonatomic) NSNumber<RLMDouble> *amount;
