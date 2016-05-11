@@ -29,6 +29,10 @@
     // Initialize Plaid
     [Plaid sharedInstance].publicKey = kPlaidPublicKey;
 
+    // Remove shadow under navigation bar
+    [[UINavigationBar appearance] setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
+    [UINavigationBar appearance].shadowImage = [[UIImage alloc] init];
+
     return YES;
 }
 

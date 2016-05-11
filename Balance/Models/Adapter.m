@@ -65,8 +65,6 @@
 
         // Return to main thread
         dispatch_async(dispatch_get_main_queue(), ^{
-            NSLog(@"%@", results);
-
             completion(results, error);
         });
     }] resume];

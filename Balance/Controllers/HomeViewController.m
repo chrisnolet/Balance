@@ -39,9 +39,6 @@
     self.transactions = [TransactionObject allObjectsByDate];
 
     // Set up user interface
-    self.tableView.contentInset = UIEdgeInsetsMake(self.headerView.frame.size.height, 0, 0, 0);
-    self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
-
     [self refreshUserInterface];
 
     // Refresh when accounts are updated
@@ -59,6 +56,14 @@
                                              selector:@selector(applicationDidBecomeActive:)
                                                  name:UIApplicationDidBecomeActiveNotification
                                                object:nil];
+
+    // Set up table view header
+    self.tableView.tableHeaderView = nil;
+
+    self.tableView.contentInset = UIEdgeInsetsMake(self.headerView.frame.size.height, 0, 0, 0);
+    self.tableView.contentOffset = CGPointMake(0, -self.tableView.contentInset.top);
+
+    [self.tableView addSubview:self.headerView];
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -100,6 +105,18 @@
     cell.detailTextLabel.text = transaction.formattedAmount;
 
     return cell;
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - UIScrollViewDelegate
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    // Pin the header view to the top of the table view
+    CGFloat offset = MIN(self.tableView.contentOffset.y, -self.headerView.frame.size.height);
+
+    self.headerView.transform = CGAffineTransformMakeTranslation(0, offset);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
