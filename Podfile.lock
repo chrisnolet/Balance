@@ -13,9 +13,9 @@ PODS:
   - plaid-ios-link (0.1.1):
     - plaid-ios-sdk
   - plaid-ios-sdk (0.3.6)
-  - Realm (0.101.0):
-    - Realm/Headers (= 0.101.0)
-  - Realm/Headers (0.101.0)
+  - Realm (0.102.0):
+    - Realm/Headers (= 0.102.0)
+  - Realm/Headers (0.102.0)
   - SVProgressHUD (2.0.3)
   - TRVSDictionaryWithCaseInsensitivity (0.0.2)
 
@@ -23,7 +23,7 @@ DEPENDENCIES:
   - Analytics/Mixpanel (~> 2.0)
   - plaid-ios-link (~> 0.1)
   - plaid-ios-sdk (~> 0.3)
-  - Realm (~> 0.101)
+  - Realm (~> 0.102)
   - SVProgressHUD (~> 2.0)
 
 SPEC CHECKSUMS:
@@ -31,7 +31,7 @@ SPEC CHECKSUMS:
   Mixpanel: fd52e097ae0d27295d0595b2261c60b94d191fda
   plaid-ios-link: b508d0cb64007ec036c98ff7f2f0ec1913e8467b
   plaid-ios-sdk: e9865b0fe6a79b3d30d886171d7a26f7e1408935
-  Realm: b21596d6d7e1c054f6fae967d27263d2593ca309
+  Realm: 5d219f9037e3ec2019c599b8227bfc95433cb10e
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
   TRVSDictionaryWithCaseInsensitivity: 51d2ccf52c6d645d27b63467a98fa02c556e01b0
 
