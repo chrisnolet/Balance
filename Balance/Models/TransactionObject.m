@@ -43,6 +43,7 @@
         self.transactionId = dictionary[@"_id"];
         self.name = dictionary[@"name"];
         self.amount = dictionary[@"amount"];
+        self.pending = dictionary[@"pending"];
         self.date = [NSDateFormatter dateFromString:dictionary[@"date"] dateFormat:@"yyyy-MM-dd"];
     }
 
