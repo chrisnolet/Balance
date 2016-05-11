@@ -17,6 +17,7 @@
 
 @interface AccountManager ()
 
+- (void)accountsForAccessToken:(NSString *)accessToken completion:(void (^)(NSArray *accounts, NSError *error))completion;
 - (void)accountForAccessToken:(NSString *)accessToken
                     accountId:(NSString *)accountId
                    completion:(void (^)(AccountObject *account, NSError *error))completion;
@@ -72,7 +73,7 @@
         }];
     }
 
-    // Write all the changes at once
+    // Commit updates when all requests complete
     dispatch_group_notify(group, dispatch_get_main_queue(), ^{
         RLMRealm *realm = [RLMRealm defaultRealm];
 
@@ -82,6 +83,28 @@
         [realm commitWriteTransaction];
     });
 }
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+- (void)accountsForPublicToken:(NSString *)publicToken completion:(void (^)(NSArray *accounts, NSError *error))completion
+{
+    // Exchange public token for access token
+    [[Adapter sharedInstance] postToEndpoint:@"exchange_token"
+                                  parameters:@{ @"public_token": publicToken }
+                                  completion:^(NSDictionary *results, NSError *error) {
+        if (error) {
+            return completion(nil, error);
+        }
+
+        // Get associated accounts
+        [[AccountManager sharedInstance] accountsForAccessToken:results[@"access_token"]
+                                                     completion:^(NSArray *accounts, NSError *error) {
+            completion(accounts, error);
+        }];
+    }];
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - Private methods
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)accountsForAccessToken:(NSString *)accessToken completion:(void (^)(NSArray *accounts, NSError *error))completion
@@ -100,9 +123,6 @@
         completion([accounts copy], error);
     }];
 }
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-#pragma mark - Private methods
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)accountForAccessToken:(NSString *)accessToken

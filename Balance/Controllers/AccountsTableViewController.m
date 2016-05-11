@@ -9,7 +9,6 @@
 #import <Realm/Realm.h>
 #import "AccountsTableViewController.h"
 #import "AddAccountTableViewController.h"
-#import "Adapter.h"
 #import "AccountManager.h"
 #import "AccountObject.h"
 #import "UIAlertView+Error.h"
@@ -18,6 +17,8 @@
 
 @property (strong, nonatomic) RLMResults<AccountObject *> *accounts;
 @property (strong, nonatomic) RLMNotificationToken *notificationToken;
+
+- (NSString *)formattedBalance;
 
 @end
 
@@ -123,26 +124,12 @@
     switch (section) {
 
         // Account
-        case 0: {
-
-            // Calculate the total balance
-            double unifiedBalance = 0.0;
-
-            for (AccountObject *account in self.accounts) {
-                unifiedBalance += account.signedBalance;
-            }
-
-            // Format the result
-            NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
-            numberFormatter.numberStyle = NSNumberFormatterCurrencyStyle;
-
-            return [NSString stringWithFormat:@"Total: %@", [numberFormatter stringFromNumber:@(unifiedBalance)]];
-        }
+        case 0:
+            return [NSString stringWithFormat:@"Total: %@", [self formattedBalance]];
 
         // Add account
-        default: {
+        default:
             return @"Made with <3 by Chris Nolet © 2016";
-        }
     }
 }
 
@@ -203,10 +190,8 @@
 - (void)linkNavigationContoller:(PLDLinkNavigationViewController *)navigationController
        didFinishWithAccessToken:(NSString *)publicToken
 {
-    // Exchange public token for access token
-    [[Adapter sharedInstance] postToEndpoint:@"exchange_token"
-                                  parameters:@{ @"public_token": publicToken }
-                                  completion:^(NSDictionary *results, NSError *error) {
+    // Authenticate and fetch accounts
+    [[AccountManager sharedInstance] accountsForPublicToken:publicToken completion:^(NSArray *accounts, NSError *error) {
         if (error) {
             [self dismissViewControllerAnimated:YES completion:nil];
             [[UIAlertView alertViewWithError:error] show];
@@ -214,20 +199,9 @@
             return;
         }
 
-        [[AccountManager sharedInstance] accountsForAccessToken:results[@"access_token"]
-                                                     completion:^(NSArray *accounts, NSError *error) {
-            if (error) {
-                [self dismissViewControllerAnimated:YES completion:nil];
-                [[UIAlertView alertViewWithError:error] show];
-
-                return;
-            }
-
-
-            // Show list of bank accounts
-            [self dismissViewControllerAnimated:YES completion:^{
-                [self performSegueWithIdentifier:@"AddAccountSegue" sender:accounts];
-            }];
+        // Show list of bank accounts
+        [self dismissViewControllerAnimated:YES completion:^{
+            [self performSegueWithIdentifier:@"AddAccountSegue" sender:accounts];
         }];
     }];
 }
@@ -250,6 +224,26 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 - (IBAction)unwindFromAddAccountSegue:(UIStoryboardSegue *)unwindSegue
 {
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - Private methods
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+- (NSString *)formattedBalance
+{
+    // Calculate the total balance
+    double totalBalance = 0.0;
+
+    for (AccountObject *account in self.accounts) {
+        totalBalance += account.signedBalance;
+    }
+
+    // Format the result
+    NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+    numberFormatter.numberStyle = NSNumberFormatterCurrencyStyle;
+
+    return [numberFormatter stringFromNumber:@(totalBalance)];
 }
 
 @end

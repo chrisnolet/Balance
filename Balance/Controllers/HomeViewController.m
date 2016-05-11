@@ -93,6 +93,7 @@
 
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     cell.textLabel.text = transaction.formattedName;
+    cell.textLabel.textColor = [transaction.pending boolValue] ? [UIColor darkGrayColor] : [UIColor darkTextColor];
     cell.detailTextLabel.text = transaction.formattedAmount;
 
     return cell;
@@ -111,10 +112,10 @@
 - (void)refreshUserInterface
 {
     // Calculate the total balance
-    double unifiedBalance = 0.0;
+    double totalBalance = 0.0;
 
     for (AccountObject *account in self.accounts) {
-        unifiedBalance += account.signedBalance;
+        totalBalance += account.signedBalance;
     }
 
     // Format the result
@@ -122,7 +123,7 @@
     numberFormatter.numberStyle = NSNumberFormatterDecimalStyle;
     numberFormatter.maximumFractionDigits = 0;
 
-    self.balanceLabel.text = [numberFormatter stringFromNumber:@(unifiedBalance)];
+    self.balanceLabel.text = [numberFormatter stringFromNumber:@(totalBalance)];
 
     // Display the date
     self.dateLabel.text = [NSDateFormatter stringFromDate:[NSDate date] dateFormat:@"EEEE, MMMM d"];

@@ -11,6 +11,6 @@
 + (instancetype)sharedInstance;
 
 - (void)updateAccounts;
-- (void)accountsForAccessToken:(NSString *)accessToken completion:(void (^)(NSArray *accounts, NSError *error))completion;
+- (void)accountsForPublicToken:(NSString *)publicToken completion:(void (^)(NSArray *accounts, NSError *error))completion;
 
 @end

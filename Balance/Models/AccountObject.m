@@ -46,31 +46,18 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 - (double)signedBalance
 {
-    double signedBalance = 0.0;
-
+    // Return a negative balance for credit accounts
     if ([self.type isEqualToString:@"credit"] ||
         [self.type isEqualToString:@"loan"] ||
         [self.type isEqualToString:@"mortgage"]) {
 
-        // Start with a negative balance for credit accounts
-        signedBalance = -[self.currentBalance doubleValue];
-
-    } else {
-
-        // Start with a positive balance for checking and savings accounts
-        NSNumber *balance = self.availableBalance ?: self.currentBalance;
-
-        signedBalance = [balance doubleValue];
+        return -[self.currentBalance doubleValue];
     }
 
-    // Adjust for pending transactions
-    for (TransactionObject *transaction in self.transactions) {
-        if ([transaction.pending boolValue]) {
-            signedBalance += transaction.signedAmount;
-        }
-    }
+    // Return a positive balance for checking and savings accounts
+    NSNumber *balance = self.availableBalance ?: self.currentBalance;
 
-    return signedBalance;
+    return [balance doubleValue];
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

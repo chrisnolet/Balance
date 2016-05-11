@@ -8,7 +8,6 @@
 
 @interface AddAccountTableViewController : UITableViewController
 
-@property (strong, nonatomic) NSString *accessToken;
 @property (strong, nonatomic) NSArray *accounts;
 
 - (IBAction)cancelBarButtonItemPressed:(id)sender;
