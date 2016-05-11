@@ -119,7 +119,7 @@
 
     // Format the result
     NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
-    numberFormatter.numberStyle = kCFNumberFormatterDecimalStyle;
+    numberFormatter.numberStyle = NSNumberFormatterDecimalStyle;
     numberFormatter.maximumFractionDigits = 0;
 
     self.balanceLabel.text = [numberFormatter stringFromNumber:@(unifiedBalance)];

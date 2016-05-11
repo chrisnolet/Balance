@@ -18,6 +18,7 @@ RLM_ARRAY_TYPE(TransactionObject)
 @property (strong, nonatomic) NSNumber<RLMDouble> *amount;
 @property (strong, nonatomic) NSNumber<RLMBool> *pending;
 
+@property (nonatomic, readonly) double signedAmount;
 @property (nonatomic, readonly) NSString *formattedAmount;
 
 + (RLMResults *)allObjectsByDate;

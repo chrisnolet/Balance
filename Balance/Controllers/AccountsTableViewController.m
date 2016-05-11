@@ -123,12 +123,26 @@
     switch (section) {
 
         // Account
-        case 0:
-            return nil;
+        case 0: {
+
+            // Calculate the total balance
+            double unifiedBalance = 0.0;
+
+            for (AccountObject *account in self.accounts) {
+                unifiedBalance += account.signedBalance;
+            }
+
+            // Format the result
+            NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+            numberFormatter.numberStyle = NSNumberFormatterCurrencyStyle;
+
+            return [NSString stringWithFormat:@"Total: %@", [numberFormatter stringFromNumber:@(unifiedBalance)]];
+        }
 
         // Add account
-        default:
+        default: {
             return @"Made with <3 by Chris Nolet © 2016";
+        }
     }
 }
 
@@ -178,7 +192,8 @@
 - (void)tableView:(UITableView *)tableView willDisplayFooterView:(UIView *)view forSection:(NSInteger)section
 {
     UITableViewHeaderFooterView *footer = (UITableViewHeaderFooterView *)view;
-    footer.textLabel.textAlignment = NSTextAlignmentCenter;
+
+    footer.textLabel.textAlignment = (section == 0) ? NSTextAlignmentRight : NSTextAlignmentCenter;
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

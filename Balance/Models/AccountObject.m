@@ -68,9 +68,6 @@
     // Format the signed balance
     NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
     numberFormatter.numberStyle = NSNumberFormatterCurrencyStyle;
-    numberFormatter.minimumFractionDigits = 2;
-    numberFormatter.maximumFractionDigits = 2;
-    numberFormatter.alwaysShowsDecimalSeparator = YES;
 
     return [numberFormatter stringFromNumber:@(self.signedBalance)];
 }
@@ -94,10 +91,8 @@
     RLMRealm *realm = [RLMRealm defaultRealm];
 
     [realm beginWriteTransaction];
+    [realm deleteObjects:self.transactions];
     [realm deleteObject:self];
-
-    // TODO(CN): Remove associated transactions
-
     [realm commitWriteTransaction];
 }
 

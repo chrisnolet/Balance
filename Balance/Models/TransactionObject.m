@@ -53,16 +53,20 @@
 #pragma mark - Property methods
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+- (double)signedAmount
+{
+    // Return negative amounts for outgoing amounts
+    return -[self.amount doubleValue];
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 - (NSString *)formattedAmount
 {
     // Format the transaction amount
     NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
     numberFormatter.numberStyle = NSNumberFormatterCurrencyStyle;
-    numberFormatter.minimumFractionDigits = 2;
-    numberFormatter.maximumFractionDigits = 2;
-    numberFormatter.alwaysShowsDecimalSeparator = YES;
 
-    return [numberFormatter stringFromNumber:self.amount];
+    return [numberFormatter stringFromNumber:@(self.signedAmount)];
 }
 
 @end

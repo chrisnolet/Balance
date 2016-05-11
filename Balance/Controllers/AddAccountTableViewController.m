@@ -63,9 +63,15 @@
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return @"Select Account";
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 - (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
 {
-    return @"Select an account that you would like to add to your balance.";
+    return @"Select an account that you would like to add to include in your total balance.";
 }
 
 @end
