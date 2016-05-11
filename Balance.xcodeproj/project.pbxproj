@@ -453,7 +453,6 @@
 			baseConfigurationReference = 883871DB2CE94624EDEBA99B /* Pods-Balance.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Balance/Balance-Prefix.pch";
 				INFOPLIST_FILE = Balance/Info.plist;
@@ -468,7 +467,6 @@
 			baseConfigurationReference = EE6ADE43772F9B4707CF0797 /* Pods-Balance.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Balance/Balance-Prefix.pch";
 				INFOPLIST_FILE = Balance/Info.plist;

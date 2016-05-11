@@ -59,6 +59,7 @@
 
     // Set up table view header
     self.tableView.tableHeaderView = nil;
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 
     self.tableView.contentInset = UIEdgeInsetsMake(self.headerView.frame.size.height, 0, 0, 0);
     self.tableView.contentOffset = CGPointMake(0, -self.tableView.contentInset.top);
@@ -100,7 +101,7 @@
     TransactionObject *transaction = self.transactions[indexPath.row];
 
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
-    cell.textLabel.text = transaction.formattedName;
+    cell.textLabel.text = transaction.name;
     cell.textLabel.textColor = [transaction.pending boolValue] ? [UIColor darkGrayColor] : [UIColor darkTextColor];
     cell.detailTextLabel.text = transaction.formattedAmount;
 
@@ -114,7 +115,7 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     // Pin the header view to the top of the table view
-    CGFloat offset = MIN(self.tableView.contentOffset.y, -self.headerView.frame.size.height);
+    CGFloat offset = MIN(self.tableView.contentOffset.y, -self.tableView.contentInset.top);
 
     self.headerView.transform = CGAffineTransformMakeTranslation(0, offset);
 }

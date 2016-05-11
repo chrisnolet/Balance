@@ -124,12 +124,18 @@
     switch (section) {
 
         // Account
-        case 0:
+        case 0: {
+            if ([self.accounts count] == 0) {
+                return nil;
+            }
+
             return [NSString stringWithFormat:@"Total: %@", [self formattedBalance]];
+        }
 
         // Add account
-        default:
+        default: {
             return @"Made with <3 by Chris Nolet © 2016";
+        }
     }
 }
 
@@ -194,9 +200,8 @@
     [[AccountManager sharedInstance] accountsForPublicToken:publicToken completion:^(NSArray *accounts, NSError *error) {
         if (error) {
             [self dismissViewControllerAnimated:YES completion:nil];
-            [[UIAlertView alertViewWithError:error] show];
 
-            return;
+            return [[UIAlertView alertViewWithError:error] show];
         }
 
         // Show list of bank accounts

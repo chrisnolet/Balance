@@ -29,16 +29,26 @@
                                     <navigationItem title="Balance" id="uHn-cF-Tpj"/>
                                 </items>
                             </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gee-hp-R2L">
+                                <rect key="frame" x="0.0" y="64" width="320" height="175"/>
+                                <color key="backgroundColor" red="0.094117647058823528" green="0.2196078431372549" blue="0.49803921568627452" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="175" id="4HP-Nd-hnN"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="5jP-Tm-Rpm" firstAttribute="top" secondItem="pl8-1V-VMa" secondAttribute="bottom" id="6JA-Qb-23S"/>
                             <constraint firstItem="pl8-1V-VMa" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="8iL-zH-1sO"/>
+                            <constraint firstItem="gee-hp-R2L" firstAttribute="top" secondItem="5jP-Tm-Rpm" secondAttribute="bottom" id="Ics-ic-gUT"/>
                             <constraint firstItem="5jP-Tm-Rpm" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="K0L-RH-Bi3"/>
+                            <constraint firstAttribute="trailing" secondItem="gee-hp-R2L" secondAttribute="trailing" id="LwH-cv-zub"/>
                             <constraint firstItem="pl8-1V-VMa" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="topMargin" id="Wl8-j9-lHZ"/>
                             <constraint firstAttribute="trailing" secondItem="pl8-1V-VMa" secondAttribute="trailing" id="Zui-cu-Qd9"/>
                             <constraint firstAttribute="trailing" secondItem="5jP-Tm-Rpm" secondAttribute="trailing" id="gWt-Zj-gJP"/>
                             <constraint firstItem="5jP-Tm-Rpm" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" id="lbM-Bu-Da6"/>
+                            <constraint firstItem="gee-hp-R2L" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="oIa-eV-zOA"/>
                         </constraints>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>

@@ -26,10 +26,11 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 + (RLMResults *)allObjectsByDate
 {
-    RLMResults *results = [self allObjects];
-
-    results = [results sortedResultsUsingProperty:@"date" ascending:NO];
-    results = [results sortedResultsUsingProperty:@"pending" ascending:NO];
+    RLMResults *results = [[self allObjects] sortedResultsUsingDescriptors:@[
+        [RLMSortDescriptor sortDescriptorWithProperty:@"pending" ascending:NO],
+        [RLMSortDescriptor sortDescriptorWithProperty:@"date" ascending:NO],
+        [RLMSortDescriptor sortDescriptorWithProperty:@"accountId" ascending:YES]
+    ]];
 
     return results;
 }
@@ -44,6 +45,7 @@
 
     if (self) {
         self.transactionId = dictionary[@"_id"];
+        self.accountId = dictionary[@"_account"];
         self.name = dictionary[@"name"];
         self.amount = dictionary[@"amount"];
         self.pending = dictionary[@"pending"];
