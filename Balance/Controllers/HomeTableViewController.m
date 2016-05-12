@@ -99,7 +99,7 @@
 
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     cell.textLabel.text = transaction.formattedName;
-    cell.textLabel.textColor = [transaction.pending boolValue] ? [UIColor darkGrayColor] : [UIColor darkTextColor];
+    cell.textLabel.textColor = [transaction.pending boolValue] ? [UIColor grayColor] : [UIColor darkTextColor];
     cell.detailTextLabel.text = transaction.formattedAmount;
 
     return cell;
