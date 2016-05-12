@@ -23,6 +23,7 @@
 		835961D31CCC072800D22A10 /* AccountsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 835961D21CCC072800D22A10 /* AccountsTableViewController.m */; };
 		835961D61CCC073E00D22A10 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 835961D51CCC073E00D22A10 /* HomeViewController.m */; };
 		83D8F28D1CE181CA00D7238A /* NSDictionary+StringValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 83D8F28C1CE181CA00D7238A /* NSDictionary+StringValue.m */; };
+		83D8F2911CE43BB300D7238A /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83D8F2901CE43BB300D7238A /* HeaderView.xib */; };
 		83EA1D091CD166DD002F2DDF /* AddAccountTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83EA1D081CD166DD002F2DDF /* AddAccountTableViewController.m */; };
 		83EA1D0C1CD18D41002F2DDF /* AccountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 83EA1D0B1CD18D41002F2DDF /* AccountManager.m */; };
 		B186E45215A692ADFD5CD891 /* libPods-Balance.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 09DD390A1B78FEDDAAD8E872 /* libPods-Balance.a */; };
@@ -61,6 +62,7 @@
 		835961D51CCC073E00D22A10 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeViewController.m; path = Controllers/HomeViewController.m; sourceTree = "<group>"; };
 		83D8F28B1CE181CA00D7238A /* NSDictionary+StringValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+StringValue.h"; path = "Categories/NSDictionary+StringValue.h"; sourceTree = "<group>"; };
 		83D8F28C1CE181CA00D7238A /* NSDictionary+StringValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+StringValue.m"; path = "Categories/NSDictionary+StringValue.m"; sourceTree = "<group>"; };
+		83D8F2901CE43BB300D7238A /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HeaderView.xib; path = Views/HeaderView.xib; sourceTree = "<group>"; };
 		83EA1D071CD166DD002F2DDF /* AddAccountTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddAccountTableViewController.h; path = Controllers/AddAccountTableViewController.h; sourceTree = "<group>"; };
 		83EA1D081CD166DD002F2DDF /* AddAccountTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddAccountTableViewController.m; path = Controllers/AddAccountTableViewController.m; sourceTree = "<group>"; };
 		83EA1D0A1CD18D41002F2DDF /* AccountManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AccountManager.h; path = Models/AccountManager.h; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 		832A76291CC98D4E00FEA998 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				83D8F2901CE43BB300D7238A /* HeaderView.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 				832A76191CC9885600FEA998 /* LaunchScreen.storyboard in Resources */,
 				832A76161CC9885600FEA998 /* Assets.xcassets in Resources */,
 				832A76141CC9885600FEA998 /* Main.storyboard in Resources */,
+				83D8F2911CE43BB300D7238A /* HeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
