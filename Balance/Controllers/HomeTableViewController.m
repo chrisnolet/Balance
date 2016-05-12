@@ -1,5 +1,5 @@
 //
-//  HomeViewController.m
+//  HomeTableViewController.m
 //  Balance
 //
 //  Created by Chris Nolet on 4/21/16.
@@ -7,24 +7,25 @@
 //
 
 #import <Realm/Realm.h>
-#import "HomeViewController.h"
+#import "HomeTableViewController.h"
 #import "AccountManager.h"
 #import "AccountObject.h"
 #import "TransactionObject.h"
 #import "NSDateFormatter+DateFormat.h"
 
-@interface HomeViewController ()
+@interface HomeTableViewController ()
 
 @property (strong, nonatomic) RLMResults<AccountObject *> *accounts;
 @property (strong, nonatomic) RLMResults<TransactionObject *> *transactions;
 @property (strong, nonatomic) RLMNotificationToken *notificationToken;
+@property (strong, nonatomic) UIView *headerView;
 
 - (void)applicationDidBecomeActive:(NSNotification *)notification;
 - (void)refreshUserInterface;
 
 @end
 
-@implementation HomeViewController
+@implementation HomeTableViewController
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - UIViewController
@@ -57,14 +58,9 @@
                                                  name:UIApplicationDidBecomeActiveNotification
                                                object:nil];
 
-    // Set up table view header
-    self.tableView.tableHeaderView = nil;
+    // Add header view
+    self.headerView = [[[UINib nibWithNibName:@"HeaderView" bundle:nil] instantiateWithOwner:self options:nil] firstObject];
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
-
-    self.tableView.contentInset = UIEdgeInsetsMake(self.headerView.frame.size.height, 0, 0, 0);
-    self.tableView.contentOffset = CGPointMake(0, -self.tableView.contentInset.top);
-
-    [self.tableView addSubview:self.headerView];
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -101,7 +97,7 @@
     TransactionObject *transaction = self.transactions[indexPath.row];
 
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
-    cell.textLabel.text = transaction.name;
+    cell.textLabel.text = transaction.formattedName;
     cell.textLabel.textColor = [transaction.pending boolValue] ? [UIColor darkGrayColor] : [UIColor darkTextColor];
     cell.detailTextLabel.text = transaction.formattedAmount;
 
@@ -118,6 +114,27 @@
     CGFloat offset = MIN(self.tableView.contentOffset.y, -self.tableView.contentInset.top);
 
     self.headerView.transform = CGAffineTransformMakeTranslation(0, offset);
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - Property methods
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+- (void)setHeaderView:(UIView *)headerView
+{
+    [_headerView removeFromSuperview];
+
+    _headerView = headerView;
+
+    // Fill the table view width
+    CGRect frame = CGRectMake(0, 0, self.tableView.frame.size.width, headerView.frame.size.height);
+
+    headerView.frame = frame;
+
+    self.tableView.tableHeaderView = [[UIView alloc] initWithFrame:frame];
+    self.tableView.tableHeaderView.userInteractionEnabled = NO;
+
+    [self.tableView addSubview:headerView];
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

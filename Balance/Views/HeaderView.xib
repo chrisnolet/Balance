@@ -9,7 +9,6 @@
             <connections>
                 <outlet property="balanceLabel" destination="CD7-he-7Qf" id="MTj-Cv-d02"/>
                 <outlet property="dateLabel" destination="jmC-zC-nY7" id="mYO-RE-epx"/>
-                <outlet property="headerView" destination="iN0-l3-epB" id="Bdo-XO-kcn"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

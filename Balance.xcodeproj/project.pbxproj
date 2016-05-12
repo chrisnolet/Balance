@@ -21,7 +21,7 @@
 		835961CD1CCA0A4200D22A10 /* UIButton+ActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 835961C91CCA0A4200D22A10 /* UIButton+ActivityIndicatorView.m */; };
 		835961D01CCA1E4600D22A10 /* Adapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 835961CF1CCA1E4600D22A10 /* Adapter.m */; };
 		835961D31CCC072800D22A10 /* AccountsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 835961D21CCC072800D22A10 /* AccountsTableViewController.m */; };
-		835961D61CCC073E00D22A10 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 835961D51CCC073E00D22A10 /* HomeViewController.m */; };
+		835961D61CCC073E00D22A10 /* HomeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 835961D51CCC073E00D22A10 /* HomeTableViewController.m */; };
 		83D8F28D1CE181CA00D7238A /* NSDictionary+StringValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 83D8F28C1CE181CA00D7238A /* NSDictionary+StringValue.m */; };
 		83D8F2911CE43BB300D7238A /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83D8F2901CE43BB300D7238A /* HeaderView.xib */; };
 		83EA1D091CD166DD002F2DDF /* AddAccountTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83EA1D081CD166DD002F2DDF /* AddAccountTableViewController.m */; };
@@ -58,8 +58,8 @@
 		835961CF1CCA1E4600D22A10 /* Adapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Adapter.m; path = Models/Adapter.m; sourceTree = "<group>"; };
 		835961D11CCC072800D22A10 /* AccountsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AccountsTableViewController.h; path = Controllers/AccountsTableViewController.h; sourceTree = "<group>"; };
 		835961D21CCC072800D22A10 /* AccountsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccountsTableViewController.m; path = Controllers/AccountsTableViewController.m; sourceTree = "<group>"; };
-		835961D41CCC073E00D22A10 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeViewController.h; path = Controllers/HomeViewController.h; sourceTree = "<group>"; };
-		835961D51CCC073E00D22A10 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeViewController.m; path = Controllers/HomeViewController.m; sourceTree = "<group>"; };
+		835961D41CCC073E00D22A10 /* HomeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeTableViewController.h; path = Controllers/HomeTableViewController.h; sourceTree = "<group>"; };
+		835961D51CCC073E00D22A10 /* HomeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeTableViewController.m; path = Controllers/HomeTableViewController.m; sourceTree = "<group>"; };
 		83D8F28B1CE181CA00D7238A /* NSDictionary+StringValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+StringValue.h"; path = "Categories/NSDictionary+StringValue.h"; sourceTree = "<group>"; };
 		83D8F28C1CE181CA00D7238A /* NSDictionary+StringValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+StringValue.m"; path = "Categories/NSDictionary+StringValue.m"; sourceTree = "<group>"; };
 		83D8F2901CE43BB300D7238A /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HeaderView.xib; path = Views/HeaderView.xib; sourceTree = "<group>"; };
@@ -166,8 +166,8 @@
 		832A76281CC98D3700FEA998 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				835961D41CCC073E00D22A10 /* HomeViewController.h */,
-				835961D51CCC073E00D22A10 /* HomeViewController.m */,
+				835961D41CCC073E00D22A10 /* HomeTableViewController.h */,
+				835961D51CCC073E00D22A10 /* HomeTableViewController.m */,
 				835961D11CCC072800D22A10 /* AccountsTableViewController.h */,
 				835961D21CCC072800D22A10 /* AccountsTableViewController.m */,
 				83EA1D071CD166DD002F2DDF /* AddAccountTableViewController.h */,
@@ -337,7 +337,7 @@
 				83D8F28D1CE181CA00D7238A /* NSDictionary+StringValue.m in Sources */,
 				835961D01CCA1E4600D22A10 /* Adapter.m in Sources */,
 				835961CB1CCA0A4200D22A10 /* NSDateFormatter+DateFormat.m in Sources */,
-				835961D61CCC073E00D22A10 /* HomeViewController.m in Sources */,
+				835961D61CCC073E00D22A10 /* HomeTableViewController.m in Sources */,
 				835961CC1CCA0A4200D22A10 /* UIAlertView+Error.m in Sources */,
 				832A760E1CC9885600FEA998 /* AppDelegate.m in Sources */,
 				835961BD1CC9FA9100D22A10 /* AccountObject.m in Sources */,
