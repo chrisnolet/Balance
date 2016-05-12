@@ -30,10 +30,10 @@
                                 </items>
                             </navigationBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gee-hp-R2L">
-                                <rect key="frame" x="0.0" y="64" width="320" height="175"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="195"/>
                                 <color key="backgroundColor" red="0.094117647058823528" green="0.2196078431372549" blue="0.49803921568627452" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="175" id="4HP-Nd-hnN"/>
+                                    <constraint firstAttribute="height" constant="195" id="4HP-Nd-hnN"/>
                                 </constraints>
                             </view>
                         </subviews>

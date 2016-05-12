@@ -112,9 +112,12 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     // Pin the header view to the top of the table view
-    CGFloat offset = MIN(self.tableView.contentOffset.y, -self.tableView.contentInset.top);
+    CGFloat offset = self.tableView.contentOffset.y;
 
-    self.headerView.transform = CGAffineTransformMakeTranslation(0, offset);
+    self.headerView.frame = CGRectMake(0,
+                                       offset,
+                                       self.tableView.frame.size.width,
+                                       MAX(self.tableView.tableHeaderView.frame.size.height - offset, 0));
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

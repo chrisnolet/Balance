@@ -7,38 +7,57 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="HeaderView">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="175"/>
+        <view clipsSubviews="YES" contentMode="scaleToFill" id="iN0-l3-epB" customClass="HeaderView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="195"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CD7-he-7Qf">
-                    <rect key="frame" x="116" y="30" width="101" height="77"/>
+                    <rect key="frame" x="116" y="40" width="101" height="77"/>
                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="64"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9fu-DR-5CM">
-                    <rect key="frame" x="88" y="38" width="22" height="43"/>
+                    <rect key="frame" x="88" y="48" width="22" height="43"/>
                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="36"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saturday, May 7" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jmC-zC-nY7">
-                    <rect key="frame" x="102" y="115" width="116" height="20"/>
+                    <rect key="frame" x="102" y="125" width="116" height="20"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pql-EE-QM5">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="1"/>
+                    <color key="backgroundColor" red="0.094117647060000004" green="0.21960784310000001" blue="0.49803921569999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="Nq4-TT-8de"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e1Z-5v-kmS">
+                    <rect key="frame" x="0.0" y="194" width="320" height="1"/>
+                    <color key="backgroundColor" red="0.094117647060000004" green="0.21960784310000001" blue="0.49803921569999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="Uhq-PY-TOq"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="0.094117647060000004" green="0.21960784310000001" blue="0.49803921569999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="9fu-DR-5CM" firstAttribute="top" secondItem="CD7-he-7Qf" secondAttribute="top" constant="8" id="9F1-IM-VO0"/>
                 <constraint firstItem="CD7-he-7Qf" firstAttribute="leading" secondItem="9fu-DR-5CM" secondAttribute="trailing" constant="6" id="B0n-1z-JTp"/>
+                <constraint firstAttribute="trailing" secondItem="Pql-EE-QM5" secondAttribute="trailing" id="BOZ-CY-SkE"/>
                 <constraint firstItem="jmC-zC-nY7" firstAttribute="top" secondItem="CD7-he-7Qf" secondAttribute="bottom" constant="8" id="CHz-NU-Q67"/>
+                <constraint firstAttribute="trailing" secondItem="e1Z-5v-kmS" secondAttribute="trailing" id="EW8-GI-e8i"/>
+                <constraint firstAttribute="bottom" secondItem="e1Z-5v-kmS" secondAttribute="bottom" id="Jbr-uI-8qH"/>
+                <constraint firstItem="Pql-EE-QM5" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="MIZ-El-kfC"/>
                 <constraint firstItem="jmC-zC-nY7" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Oo7-lQ-1tA"/>
-                <constraint firstAttribute="bottom" secondItem="jmC-zC-nY7" secondAttribute="bottom" constant="40" id="RSy-vn-NgH"/>
-                <constraint firstItem="CD7-he-7Qf" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="30" id="YVZ-oX-R8g"/>
                 <constraint firstItem="CD7-he-7Qf" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" constant="6" id="f64-jd-eOG"/>
+                <constraint firstItem="CD7-he-7Qf" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-19" id="lW3-F9-MYq"/>
+                <constraint firstItem="e1Z-5v-kmS" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="sbs-3b-8BN"/>
+                <constraint firstItem="Pql-EE-QM5" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="wlD-t1-pna"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
