@@ -10,7 +10,4 @@
 
 @interface HomeTableViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
 
-@property (strong, nonatomic) IBOutlet UILabel *balanceLabel;
-@property (strong, nonatomic) IBOutlet UILabel *dateLabel;
-
 @end

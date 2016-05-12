@@ -8,6 +8,7 @@
 
 #import <Realm/Realm.h>
 #import "HomeTableViewController.h"
+#import "HeaderView.h"
 #import "AccountManager.h"
 #import "AccountObject.h"
 #import "TransactionObject.h"
@@ -18,7 +19,7 @@
 @property (strong, nonatomic) RLMResults<AccountObject *> *accounts;
 @property (strong, nonatomic) RLMResults<TransactionObject *> *transactions;
 @property (strong, nonatomic) RLMNotificationToken *notificationToken;
-@property (strong, nonatomic) UIView *headerView;
+@property (strong, nonatomic) HeaderView *headerView;
 
 - (void)applicationDidBecomeActive:(NSNotification *)notification;
 - (void)refreshUserInterface;
@@ -34,6 +35,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    // Add header view
+    self.headerView = [[[UINib nibWithNibName:@"HeaderView" bundle:nil] instantiateWithOwner:self options:nil] firstObject];
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 
     // Load accounts and transactions
     self.accounts = [AccountObject allObjects];
@@ -57,10 +62,6 @@
                                              selector:@selector(applicationDidBecomeActive:)
                                                  name:UIApplicationDidBecomeActiveNotification
                                                object:nil];
-
-    // Add header view
-    self.headerView = [[[UINib nibWithNibName:@"HeaderView" bundle:nil] instantiateWithOwner:self options:nil] firstObject];
-    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -120,7 +121,7 @@
 #pragma mark - Property methods
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-- (void)setHeaderView:(UIView *)headerView
+- (void)setHeaderView:(HeaderView *)headerView
 {
     [_headerView removeFromSuperview];
 
@@ -161,10 +162,10 @@
     numberFormatter.numberStyle = NSNumberFormatterDecimalStyle;
     numberFormatter.maximumFractionDigits = 0;
 
-    self.balanceLabel.text = [numberFormatter stringFromNumber:@(totalBalance)];
+    self.headerView.balanceLabel.text = [numberFormatter stringFromNumber:@(totalBalance)];
 
     // Display the date
-    self.dateLabel.text = [NSDateFormatter stringFromDate:[NSDate date] dateFormat:@"EEEE, MMMM d"];
+    self.headerView.dateLabel.text = [NSDateFormatter stringFromDate:[NSDate date] dateFormat:@"EEEE, MMMM d"];
 
     // Reload transactions
     [self.tableView reloadData];
