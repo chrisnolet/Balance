@@ -11,4 +11,6 @@ extern NSString * const kPlaidClientId;
 extern NSString * const kPlaidSecret;
 extern NSString * const kPlaidPublicKey;
 
+extern float const kBalanceLoadingAlpha;
+
 extern NSInteger const kTransactionsNumberOfDays;

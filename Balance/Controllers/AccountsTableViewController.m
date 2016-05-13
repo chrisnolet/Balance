@@ -238,7 +238,7 @@
 - (NSString *)formattedBalance
 {
     // Calculate the total balance
-    double totalBalance = 0.0;
+    double totalBalance = 0;
 
     for (AccountObject *account in self.accounts) {
         totalBalance += account.signedBalance;

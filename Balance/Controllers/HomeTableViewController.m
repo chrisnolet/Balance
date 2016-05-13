@@ -21,7 +21,8 @@
 @property (strong, nonatomic) RLMNotificationToken *notificationToken;
 @property (strong, nonatomic) HeaderView *headerView;
 
-- (void)applicationDidBecomeActive:(NSNotification *)notification;
+- (void)applicationDidEnterBackground:(NSNotification *)notification;
+- (void)applicationWillEnterForeground:(NSNotification *)notification;
 - (void)updateAccounts;
 - (void)refreshUserInterface;
 
@@ -41,10 +42,11 @@
     self.accounts = [AccountObject allObjects];
     self.transactions = [TransactionObject allObjectsByDate];
 
-    // Set up user interface
+    // Set up table view
     self.headerView = [HeaderView viewWithDefaultNib];
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 
+    // Set user interface text
     [self refreshUserInterface];
 
     // Refresh when accounts are updated
@@ -57,10 +59,16 @@
     // Update accounts
     [self updateAccounts];
 
+    // Dim balance view on close
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(applicationDidEnterBackground:)
+                                                 name:UIApplicationDidEnterBackgroundNotification
+                                               object:nil];
+
     // Update when re-opened
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(applicationDidBecomeActive:)
-                                                 name:UIApplicationDidBecomeActiveNotification
+                                             selector:@selector(applicationWillEnterForeground:)
+                                                 name:UIApplicationWillEnterForegroundNotification
                                                object:nil];
 }
 
@@ -140,7 +148,14 @@
 #pragma mark - Private methods
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-- (void)applicationDidBecomeActive:(NSNotification *)notification
+- (void)applicationDidEnterBackground:(NSNotification *)notification
+{
+    // Dim balance view on close
+    self.headerView.balanceView.alpha = kBalanceLoadingAlpha;
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+- (void)applicationWillEnterForeground:(NSNotification *)notification
 {
     [self updateAccounts];
 }
@@ -148,7 +163,7 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)updateAccounts
 {
-    self.headerView.balanceView.alpha = 0.5f;
+    self.headerView.balanceView.alpha = kBalanceLoadingAlpha;
 
     [[AccountManager sharedInstance] updateAccounts];
 }
@@ -157,7 +172,7 @@
 - (void)refreshUserInterface
 {
     // Calculate the total balance
-    double totalBalance = 0.0;
+    double totalBalance = 0;
 
     for (AccountObject *account in self.accounts) {
         totalBalance += account.signedBalance;
@@ -169,7 +184,7 @@
     numberFormatter.maximumFractionDigits = 0;
 
     self.headerView.balanceLabel.text = [numberFormatter stringFromNumber:@(totalBalance)];
-    self.headerView.balanceView.alpha = 1.0f;
+    self.headerView.balanceView.alpha = 1;
 
     // Display the date
     self.headerView.dateLabel.text = [NSDateFormatter stringFromDate:[NSDate date] dateFormat:@"EEEE, MMMM d"];
