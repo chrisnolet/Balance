@@ -36,15 +36,14 @@
 {
     [super viewDidLoad];
 
-    // Add header view
-    self.headerView = [[[UINib nibWithNibName:@"HeaderView" bundle:nil] instantiateWithOwner:self options:nil] firstObject];
-    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
-
     // Load accounts and transactions
     self.accounts = [AccountObject allObjects];
     self.transactions = [TransactionObject allObjectsByDate];
 
     // Set up user interface
+    self.headerView = [HeaderView viewWithDefaultNib];
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+
     [self refreshUserInterface];
 
     // Refresh when accounts are updated

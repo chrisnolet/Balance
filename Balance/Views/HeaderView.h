@@ -11,4 +11,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *balanceLabel;
 @property (strong, nonatomic) IBOutlet UILabel *dateLabel;
 
++ (instancetype)viewWithDefaultNib;
+
 @end
