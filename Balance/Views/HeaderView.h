@@ -8,6 +8,7 @@
 
 @interface HeaderView : UIView
 
+@property (strong, nonatomic) IBOutlet UIView *balanceView;
 @property (strong, nonatomic) IBOutlet UILabel *balanceLabel;
 @property (strong, nonatomic) IBOutlet UILabel *dateLabel;
 

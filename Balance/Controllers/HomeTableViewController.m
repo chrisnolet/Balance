@@ -22,6 +22,7 @@
 @property (strong, nonatomic) HeaderView *headerView;
 
 - (void)applicationDidBecomeActive:(NSNotification *)notification;
+- (void)updateAccounts;
 - (void)refreshUserInterface;
 
 @end
@@ -54,7 +55,7 @@
     }];
 
     // Update accounts
-    [[AccountManager sharedInstance] updateAccounts];
+    [self updateAccounts];
 
     // Update when re-opened
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -113,10 +114,7 @@
     // Pin the header view to the top of the table view
     CGFloat offset = self.tableView.contentOffset.y;
 
-    self.headerView.frame = CGRectMake(0,
-                                       offset,
-                                       self.tableView.frame.size.width,
-                                       MAX(self.tableView.tableHeaderView.frame.size.height - offset, 0));
+    self.headerView.frame = CGRectMake(0, offset, self.tableView.frame.size.width, MAX(-offset, 0));
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -130,12 +128,10 @@
     _headerView = headerView;
 
     // Fill the table view width
-    CGRect frame = CGRectMake(0, 0, self.tableView.frame.size.width, headerView.frame.size.height);
+    headerView.frame = CGRectMake(0, 0, self.tableView.frame.size.width, headerView.frame.size.height);
 
-    headerView.frame = frame;
-
-    self.tableView.tableHeaderView = [[UIView alloc] initWithFrame:frame];
-    self.tableView.tableHeaderView.userInteractionEnabled = NO;
+    self.tableView.contentInset = UIEdgeInsetsMake(headerView.frame.size.height, 0, 0, 0);
+    self.tableView.contentOffset = CGPointMake(0, -headerView.frame.size.height);
 
     [self.tableView addSubview:headerView];
 }
@@ -146,6 +142,14 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)applicationDidBecomeActive:(NSNotification *)notification
 {
+    [self updateAccounts];
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+- (void)updateAccounts
+{
+    self.headerView.balanceView.alpha = 0.5f;
+
     [[AccountManager sharedInstance] updateAccounts];
 }
 
@@ -165,6 +169,7 @@
     numberFormatter.maximumFractionDigits = 0;
 
     self.headerView.balanceLabel.text = [numberFormatter stringFromNumber:@(totalBalance)];
+    self.headerView.balanceView.alpha = 1.0f;
 
     // Display the date
     self.headerView.dateLabel.text = [NSDateFormatter stringFromDate:[NSDate date] dateFormat:@"EEEE, MMMM d"];
