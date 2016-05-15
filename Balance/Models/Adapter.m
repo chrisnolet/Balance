@@ -63,8 +63,28 @@
         // Parse the response
         NSDictionary *results = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
 
+        // Return error for server-side issues
+        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
+
+        // TODO(CN): Generalize for all applications
+        if (httpResponse.statusCode != 200) {
+            NSDictionary *userInfo = @{
+                NSLocalizedDescriptionKey: results[@"resolve"],
+                NSLocalizedFailureReasonErrorKey: results[@"message"]
+            };
+
+            error = [NSError errorWithDomain:kBalanceErrorDomain code:[results[@"code"] integerValue] userInfo:userInfo];
+        }
+
         // Return to main thread
         dispatch_async(dispatch_get_main_queue(), ^{
+
+            // Log in debug mode
+            #ifdef DEBUG
+            NSLog(@"%@", response);
+            NSLog(@"%@", results);
+            #endif
+
             completion(results, error);
         });
     }] resume];

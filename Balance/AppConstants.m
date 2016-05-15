@@ -8,6 +8,8 @@
 
 #import "AppConstants.h"
 
+NSString * const kBalanceErrorDomain = @"BalanceErrorDomain";
+
 NSString * const kPlaidBaseURL = @"https://tartan.plaid.com/";
 NSString * const kPlaidClientId = @"57182ff966710877408d0062";
 NSString * const kPlaidSecret = @"243f3f867d6a55056b78103548556c";
