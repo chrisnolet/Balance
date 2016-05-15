@@ -51,7 +51,16 @@
         [self.type isEqualToString:@"loan"] ||
         [self.type isEqualToString:@"mortgage"]) {
 
-        return -[self.currentBalance doubleValue];
+        double balance = -[self.currentBalance doubleValue];
+
+        // Adjust for pending transactions
+        for (TransactionObject *transaction in self.transactions) {
+            if ([transaction.pending boolValue]) {
+                balance += transaction.signedAmount;
+            }
+        }
+
+        return balance;
     }
 
     // Return a positive balance for checking and savings accounts

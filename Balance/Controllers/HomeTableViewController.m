@@ -181,6 +181,7 @@
     // Format the result
     NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
     numberFormatter.numberStyle = NSNumberFormatterDecimalStyle;
+    numberFormatter.roundingMode = NSNumberFormatterRoundFloor;
     numberFormatter.maximumFractionDigits = 0;
 
     self.headerView.balanceLabel.text = [numberFormatter stringFromNumber:@(totalBalance)];
