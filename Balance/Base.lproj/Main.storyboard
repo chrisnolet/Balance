@@ -47,6 +47,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Balance" id="Xth-2s-1YR">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="ZCK-Qv-Unb"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="organize" id="UMM-Oc-7bg">
                             <connections>
                                 <segue destination="CjS-HP-cat" kind="push" id="2wX-7F-PnJ"/>

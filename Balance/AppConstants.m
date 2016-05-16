@@ -17,4 +17,4 @@ NSString * const kPlaidPublicKey = @"3abc7da69023841b6136114942a0d6";
 
 float const kBalanceLoadingAlpha = 0.5f;
 
-NSInteger const kTransactionsNumberOfDays = 10;
+NSInteger const kTransactionsNumberOfDays = 14;
