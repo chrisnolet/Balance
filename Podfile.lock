@@ -10,8 +10,6 @@ PODS:
   - Mixpanel (2.8.3):
     - Mixpanel/Mixpanel (= 2.8.3)
   - Mixpanel/Mixpanel (2.8.3)
-  - plaid-ios-link (0.1.1):
-    - plaid-ios-sdk
   - plaid-ios-sdk (0.3.6)
   - Realm (0.102.1):
     - Realm/Headers (= 0.102.1)
@@ -20,17 +18,16 @@ PODS:
 
 DEPENDENCIES:
   - Analytics/Mixpanel (~> 2.0)
-  - plaid-ios-link (~> 0.1)
+  - plaid-ios-sdk (~> 0.3)
   - Realm (~> 0.102)
 
 SPEC CHECKSUMS:
   Analytics: 51d6163cb568c8ede69f2b92ef4779d91e1524e2
   Mixpanel: fd52e097ae0d27295d0595b2261c60b94d191fda
-  plaid-ios-link: b508d0cb64007ec036c98ff7f2f0ec1913e8467b
   plaid-ios-sdk: e9865b0fe6a79b3d30d886171d7a26f7e1408935
   Realm: 5254be610db3e5024879684717bf038990bb59ec
   TRVSDictionaryWithCaseInsensitivity: 51d2ccf52c6d645d27b63467a98fa02c556e01b0
 
-PODFILE CHECKSUM: e20fe8a3676a36771a04154eaf39383444f83ab7
+PODFILE CHECKSUM: fd07e9c4a58f1698da6cf12a577531b4d54a0577
 
 COCOAPODS: 1.0.0

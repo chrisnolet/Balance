@@ -6,9 +6,12 @@
 //  Copyright © 2016 Relaunch. All rights reserved.
 //
 
-#import "PLDLinkNavigationViewController.h"
+#import "PLDLinkBankSelectionViewController.h"
+#import "PLDLinkBankMFAContainerViewController.h"
+#import "PLDAuthentication.h"
 
-@interface AccountsTableViewController : UITableViewController <PLDLinkNavigationControllerDelegate>
+@interface AccountsTableViewController : UITableViewController <PLDLinkBankSelectionViewControllerDelegate,
+                                                                PLDLinkBankMFAContainerViewControllerDelegate>
 
 - (IBAction)unwindFromAddAccountSegue:(UIStoryboardSegue *)unwindSegue;
 

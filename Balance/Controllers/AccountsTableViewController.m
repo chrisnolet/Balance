@@ -169,15 +169,15 @@
     // Add account
     if (indexPath.section == 1) {
 
-        // Show the bank selection modal
-        PLDLinkNavigationViewController *plaidLink = [[PLDLinkNavigationViewController alloc]
-                                                      initWithEnvironment:PlaidEnvironmentTartan
-                                                      product:PlaidProductConnect];
+        // Show the bank selection controller
+        PLDLinkBankSelectionViewController *plaidBankSelectionViewController = [[PLDLinkBankSelectionViewController alloc]
+                                                                                initWithProduct:PlaidProductConnect];
+        plaidBankSelectionViewController.title = @"Select Your Bank";
+        plaidBankSelectionViewController.view.backgroundColor = self.view.backgroundColor;
+        plaidBankSelectionViewController.navigationItem.rightBarButtonItem = nil;
+        plaidBankSelectionViewController.delegate = self;
 
-        plaidLink.modalPresentationStyle = UIModalPresentationOverCurrentContext;
-        plaidLink.linkDelegate = self;
-
-        [self presentViewController:plaidLink animated:YES completion:nil];
+        [self.navigationController pushViewController:plaidBankSelectionViewController animated:YES];
     }
 }
 
@@ -190,14 +190,41 @@
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-#pragma mark - PLDLinkNavigationControllerDelegate
+#pragma mark - PLDLinkBankSelectionViewControllerDelegate
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-- (void)linkNavigationContoller:(PLDLinkNavigationViewController *)navigationController
-       didFinishWithAccessToken:(NSString *)publicToken
+- (void)bankSelectionViewController:(PLDLinkBankSelectionViewController *)viewController
+           didFinishWithInstitution:(PLDInstitution *)institution
+{
+    PLDLinkBankMFAContainerViewController *plaidBankMFAContainerViewController = [[PLDLinkBankMFAContainerViewController alloc]
+                                                                                  initWithInstitution:institution
+                                                                                  product:PlaidProductConnect];
+
+    [self.navigationController pushViewController:plaidBankMFAContainerViewController animated:YES];
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+- (void)bankSelectionViewControllerDidFinishWithBankNotListed:(PLDLinkBankSelectionViewController *)viewController
+{
+    [self.navigationController popToViewController:self animated:YES];
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+- (void)bankSelectionViewControllerCancelled:(PLDLinkBankSelectionViewController *)viewController
+{
+    [self.navigationController popToViewController:self animated:YES];
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - PLDLinkBankMFAContainerViewControllerDelegate
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+- (void)mfaContainerViewController:(PLDLinkBankMFAContainerViewController *)viewController
+       didFinishWithAuthentication:(PLDAuthentication *)authentication
 {
     // Authenticate and fetch accounts
-    [[AccountManager sharedInstance] accountsForPublicToken:publicToken completion:^(NSArray *accounts, NSError *error) {
+    [[AccountManager sharedInstance] accountsForPublicToken:authentication.accessToken
+                                                 completion:^(NSArray *accounts, NSError *error) {
         if (error) {
             [self dismissViewControllerAnimated:YES completion:nil];
 
@@ -205,22 +232,9 @@
         }
 
         // Show list of bank accounts
-        [self dismissViewControllerAnimated:YES completion:^{
-            [self performSegueWithIdentifier:@"AddAccountSegue" sender:accounts];
-        }];
+        [self performSegueWithIdentifier:@"AddAccountSegue" sender:accounts];
+        [self dismissViewControllerAnimated:YES completion:nil];
     }];
-}
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-- (void)linkNavigationControllerDidFinishWithBankNotListed:(PLDLinkNavigationViewController *)navigationController
-{
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-- (void)linkNavigationControllerDidCancel:(PLDLinkNavigationViewController *)navigationController
-{
-    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

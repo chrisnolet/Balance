@@ -28,6 +28,81 @@
 		83D8F2941CE476BA00D7238A /* HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83D8F2931CE476BA00D7238A /* HeaderView.m */; };
 		83EA1D091CD166DD002F2DDF /* AddAccountTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83EA1D081CD166DD002F2DDF /* AddAccountTableViewController.m */; };
 		83EA1D0C1CD18D41002F2DDF /* AccountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 83EA1D0B1CD18D41002F2DDF /* AccountManager.m */; };
+		83F6BC751CEA7C74002B7DC2 /* plaid-ios-link in Resources */ = {isa = PBXBuildFile; fileRef = 83F6BC741CEA7C74002B7DC2 /* plaid-ios-link */; };
+		83F6BCE51CEA7FD3002B7DC2 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 83F6BC7C1CEA7FD3002B7DC2 /* LICENSE */; };
+		83F6BCE61CEA7FD3002B7DC2 /* NSString+Localization.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F6BC801CEA7FD3002B7DC2 /* NSString+Localization.m */; };
+		83F6BCE71CEA7FD3002B7DC2 /* PLDLinkBankMFABaseStepView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F6BC821CEA7FD3002B7DC2 /* PLDLinkBankMFABaseStepView.m */; };
+		83F6BCE81CEA7FD3002B7DC2 /* PLDLinkBankMFAChoiceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F6BC841CEA7FD3002B7DC2 /* PLDLinkBankMFAChoiceView.m */; };
+		83F6BCE91CEA7FD3002B7DC2 /* PLDLinkBankMFAChoiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F6BC861CEA7FD3002B7DC2 /* PLDLinkBankMFAChoiceViewController.m */; };
+		83F6BCEA1CEA7FD3002B7DC2 /* PLDLinkBankMFAContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F6BC881CEA7FD3002B7DC2 /* PLDLinkBankMFAContainerView.m */; };
+		83F6BCEB1CEA7FD3002B7DC2 /* PLDLinkBankMFAContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F6BC8A1CEA7FD3002B7DC2 /* PLDLinkBankMFAContainerViewController.m */; };
+		83F6BCEC1CEA7FD3002B7DC2 /* PLDLinkBankMFAExplainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F6BC8C1CEA7FD3002B7DC2 /* PLDLinkBankMFAExplainerView.m */; };
+		83F6BCED1CEA7FD3002B7DC2 /* PLDLinkBankMFALoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F6BC8E1CEA7FD3002B7DC2 /* PLDLinkBankMFALoginView.m */; };
+		83F6BCEE1CEA7FD3002B7DC2 /* PLDLinkBankMFALoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F6BC901CEA7FD3002B7DC2 /* PLDLinkBankMFALoginViewController.m */; };
+		83F6BCEF1CEA7FD3002B7DC2 /* PLDLinkBankMFAQuestionOrCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F6BC921CEA7FD3002B7DC2 /* PLDLinkBankMFAQuestionOrCodeView.m */; };
+		83F6BCF01CEA7FD3002B7DC2 /* PLDLinkBankMFAQuestionOrCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F6BC941CEA7FD3002B7DC2 /* PLDLinkBankMFAQuestionOrCodeViewController.m */; };
+		83F6BCF11CEA7FD3002B7DC2 /* PLDLinkBankMFASelectionsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F6BC961CEA7FD3002B7DC2 /* PLDLinkBankMFASelectionsView.m */; };
+		83F6BCF21CEA7FD3002B7DC2 /* PLDLinkBankMFASelectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F6BC981CEA7FD3002B7DC2 /* PLDLinkBankMFASelectionsViewController.m */; };
+		83F6BCF31CEA7FD3002B7DC2 /* PLDLinkBankMFASelectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F6BC9A1CEA7FD3002B7DC2 /* PLDLinkBankMFASelectionView.m */; };
+		83F6BCF41CEA7FD3002B7DC2 /* PLDLinkBankMFASelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F6BC9C1CEA7FD3002B7DC2 /* PLDLinkBankMFASelectionViewController.m */; };
+		83F6BCF51CEA7FD3002B7DC2 /* PLDLinkBankMFAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F6BC9E1CEA7FD3002B7DC2 /* PLDLinkBankMFAViewController.m */; };
+		83F6BCF61CEA7FD3002B7DC2 /* PLDLinkBankSelectionSearchResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F6BCA01CEA7FD3002B7DC2 /* PLDLinkBankSelectionSearchResultsViewController.m */; };
+		83F6BCF71CEA7FD3002B7DC2 /* PLDLinkBankSelectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F6BCA21CEA7FD3002B7DC2 /* PLDLinkBankSelectionView.m */; };
+		83F6BCF81CEA7FD3002B7DC2 /* PLDLinkBankSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F6BCA41CEA7FD3002B7DC2 /* PLDLinkBankSelectionViewController.m */; };
+		83F6BCF91CEA7FD3002B7DC2 /* PLDLinkBankTileView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F6BCA61CEA7FD3002B7DC2 /* PLDLinkBankTileView.m */; };
+		83F6BCFA1CEA7FD3002B7DC2 /* PLDLinkNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F6BCA81CEA7FD3002B7DC2 /* PLDLinkNavigationViewController.m */; };
+		83F6BCFB1CEA7FD3002B7DC2 /* PLDLinkResourceBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F6BCAA1CEA7FD3002B7DC2 /* PLDLinkResourceBundle.m */; };
+		83F6BCFC1CEA7FD3002B7DC2 /* PLDLinkSelectionToLoginAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F6BCAC1CEA7FD3002B7DC2 /* PLDLinkSelectionToLoginAnimator.m */; };
+		83F6BCFD1CEA7FD3002B7DC2 /* PLDLinkStyledButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F6BCAE1CEA7FD3002B7DC2 /* PLDLinkStyledButton.m */; };
+		83F6BCFE1CEA7FD3002B7DC2 /* PLDLinkStyledTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F6BCB01CEA7FD3002B7DC2 /* PLDLinkStyledTextField.m */; };
+		83F6BCFF1CEA7FD3002B7DC2 /* UIColor+PLDLinkUIColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F6BCB21CEA7FD3002B7DC2 /* UIColor+PLDLinkUIColor.m */; };
+		83F6BD001CEA7FD3002B7DC2 /* amex.png in Resources */ = {isa = PBXBuildFile; fileRef = 83F6BCB51CEA7FD3002B7DC2 /* amex.png */; };
+		83F6BD011CEA7FD3002B7DC2 /* amex@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 83F6BCB61CEA7FD3002B7DC2 /* amex@2x.png */; };
+		83F6BD021CEA7FD3002B7DC2 /* amex@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 83F6BCB71CEA7FD3002B7DC2 /* amex@3x.png */; };
+		83F6BD031CEA7FD3002B7DC2 /* bofa.png in Resources */ = {isa = PBXBuildFile; fileRef = 83F6BCB81CEA7FD3002B7DC2 /* bofa.png */; };
+		83F6BD041CEA7FD3002B7DC2 /* bofa@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 83F6BCB91CEA7FD3002B7DC2 /* bofa@2x.png */; };
+		83F6BD051CEA7FD3002B7DC2 /* bofa@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 83F6BCBA1CEA7FD3002B7DC2 /* bofa@3x.png */; };
+		83F6BD061CEA7FD3002B7DC2 /* capone360.png in Resources */ = {isa = PBXBuildFile; fileRef = 83F6BCBB1CEA7FD3002B7DC2 /* capone360.png */; };
+		83F6BD071CEA7FD3002B7DC2 /* capone360@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 83F6BCBC1CEA7FD3002B7DC2 /* capone360@2x.png */; };
+		83F6BD081CEA7FD3002B7DC2 /* capone360@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 83F6BCBD1CEA7FD3002B7DC2 /* capone360@3x.png */; };
+		83F6BD091CEA7FD3002B7DC2 /* chase.png in Resources */ = {isa = PBXBuildFile; fileRef = 83F6BCBE1CEA7FD3002B7DC2 /* chase.png */; };
+		83F6BD0A1CEA7FD3002B7DC2 /* chase@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 83F6BCBF1CEA7FD3002B7DC2 /* chase@2x.png */; };
+		83F6BD0B1CEA7FD3002B7DC2 /* chase@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 83F6BCC01CEA7FD3002B7DC2 /* chase@3x.png */; };
+		83F6BD0C1CEA7FD3002B7DC2 /* citi.png in Resources */ = {isa = PBXBuildFile; fileRef = 83F6BCC11CEA7FD3002B7DC2 /* citi.png */; };
+		83F6BD0D1CEA7FD3002B7DC2 /* citi@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 83F6BCC21CEA7FD3002B7DC2 /* citi@2x.png */; };
+		83F6BD0E1CEA7FD3002B7DC2 /* citi@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 83F6BCC31CEA7FD3002B7DC2 /* citi@3x.png */; };
+		83F6BD0F1CEA7FD3002B7DC2 /* fidelity.png in Resources */ = {isa = PBXBuildFile; fileRef = 83F6BCC41CEA7FD3002B7DC2 /* fidelity.png */; };
+		83F6BD101CEA7FD3002B7DC2 /* fidelity@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 83F6BCC51CEA7FD3002B7DC2 /* fidelity@2x.png */; };
+		83F6BD111CEA7FD3002B7DC2 /* fidelity@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 83F6BCC61CEA7FD3002B7DC2 /* fidelity@3x.png */; };
+		83F6BD121CEA7FD3002B7DC2 /* nfcu.png in Resources */ = {isa = PBXBuildFile; fileRef = 83F6BCC71CEA7FD3002B7DC2 /* nfcu.png */; };
+		83F6BD131CEA7FD3002B7DC2 /* nfcu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 83F6BCC81CEA7FD3002B7DC2 /* nfcu@2x.png */; };
+		83F6BD141CEA7FD3002B7DC2 /* nfcu@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 83F6BCC91CEA7FD3002B7DC2 /* nfcu@3x.png */; };
+		83F6BD151CEA7FD3002B7DC2 /* pnc.png in Resources */ = {isa = PBXBuildFile; fileRef = 83F6BCCA1CEA7FD3002B7DC2 /* pnc.png */; };
+		83F6BD161CEA7FD3002B7DC2 /* pnc@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 83F6BCCB1CEA7FD3002B7DC2 /* pnc@2x.png */; };
+		83F6BD171CEA7FD3002B7DC2 /* pnc@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 83F6BCCC1CEA7FD3002B7DC2 /* pnc@3x.png */; };
+		83F6BD181CEA7FD3002B7DC2 /* schwab.png in Resources */ = {isa = PBXBuildFile; fileRef = 83F6BCCD1CEA7FD3002B7DC2 /* schwab.png */; };
+		83F6BD191CEA7FD3002B7DC2 /* schwab@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 83F6BCCE1CEA7FD3002B7DC2 /* schwab@2x.png */; };
+		83F6BD1A1CEA7FD3002B7DC2 /* schwab@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 83F6BCCF1CEA7FD3002B7DC2 /* schwab@3x.png */; };
+		83F6BD1B1CEA7FD3002B7DC2 /* suntrust.png in Resources */ = {isa = PBXBuildFile; fileRef = 83F6BCD01CEA7FD3002B7DC2 /* suntrust.png */; };
+		83F6BD1C1CEA7FD3002B7DC2 /* suntrust@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 83F6BCD11CEA7FD3002B7DC2 /* suntrust@2x.png */; };
+		83F6BD1D1CEA7FD3002B7DC2 /* suntrust@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 83F6BCD21CEA7FD3002B7DC2 /* suntrust@3x.png */; };
+		83F6BD1E1CEA7FD3002B7DC2 /* svb.png in Resources */ = {isa = PBXBuildFile; fileRef = 83F6BCD31CEA7FD3002B7DC2 /* svb.png */; };
+		83F6BD1F1CEA7FD3002B7DC2 /* svb@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 83F6BCD41CEA7FD3002B7DC2 /* svb@2x.png */; };
+		83F6BD201CEA7FD3002B7DC2 /* svb@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 83F6BCD51CEA7FD3002B7DC2 /* svb@3x.png */; };
+		83F6BD211CEA7FD3002B7DC2 /* td.png in Resources */ = {isa = PBXBuildFile; fileRef = 83F6BCD61CEA7FD3002B7DC2 /* td.png */; };
+		83F6BD221CEA7FD3002B7DC2 /* td@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 83F6BCD71CEA7FD3002B7DC2 /* td@2x.png */; };
+		83F6BD231CEA7FD3002B7DC2 /* td@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 83F6BCD81CEA7FD3002B7DC2 /* td@3x.png */; };
+		83F6BD241CEA7FD3002B7DC2 /* us.png in Resources */ = {isa = PBXBuildFile; fileRef = 83F6BCD91CEA7FD3002B7DC2 /* us.png */; };
+		83F6BD251CEA7FD3002B7DC2 /* us@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 83F6BCDA1CEA7FD3002B7DC2 /* us@2x.png */; };
+		83F6BD261CEA7FD3002B7DC2 /* us@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 83F6BCDB1CEA7FD3002B7DC2 /* us@3x.png */; };
+		83F6BD271CEA7FD3002B7DC2 /* usaa.png in Resources */ = {isa = PBXBuildFile; fileRef = 83F6BCDC1CEA7FD3002B7DC2 /* usaa.png */; };
+		83F6BD281CEA7FD3002B7DC2 /* usaa@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 83F6BCDD1CEA7FD3002B7DC2 /* usaa@2x.png */; };
+		83F6BD291CEA7FD3002B7DC2 /* usaa@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 83F6BCDE1CEA7FD3002B7DC2 /* usaa@3x.png */; };
+		83F6BD2A1CEA7FD3002B7DC2 /* wells.png in Resources */ = {isa = PBXBuildFile; fileRef = 83F6BCDF1CEA7FD3002B7DC2 /* wells.png */; };
+		83F6BD2B1CEA7FD3002B7DC2 /* wells@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 83F6BCE01CEA7FD3002B7DC2 /* wells@2x.png */; };
+		83F6BD2C1CEA7FD3002B7DC2 /* wells@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 83F6BCE11CEA7FD3002B7DC2 /* wells@3x.png */; };
+		83F6BD2D1CEA7FD3002B7DC2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 83F6BCE31CEA7FD3002B7DC2 /* Localizable.strings */; };
+		83F6BD2E1CEA7FD3002B7DC2 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 83F6BCE41CEA7FD3002B7DC2 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +147,107 @@
 		83EA1D081CD166DD002F2DDF /* AddAccountTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddAccountTableViewController.m; path = Controllers/AddAccountTableViewController.m; sourceTree = "<group>"; };
 		83EA1D0A1CD18D41002F2DDF /* AccountManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AccountManager.h; path = Models/AccountManager.h; sourceTree = "<group>"; };
 		83EA1D0B1CD18D41002F2DDF /* AccountManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccountManager.m; path = Models/AccountManager.m; sourceTree = "<group>"; };
+		83F6BC741CEA7C74002B7DC2 /* plaid-ios-link */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "plaid-ios-link"; path = "/Users/Chris/Projects/Balance/Vendor/plaid-ios-link"; sourceTree = "<absolute>"; };
+		83F6BC7C1CEA7FD3002B7DC2 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		83F6BC7F1CEA7FD3002B7DC2 /* NSString+Localization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Localization.h"; sourceTree = "<group>"; };
+		83F6BC801CEA7FD3002B7DC2 /* NSString+Localization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Localization.m"; sourceTree = "<group>"; };
+		83F6BC811CEA7FD3002B7DC2 /* PLDLinkBankMFABaseStepView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLDLinkBankMFABaseStepView.h; sourceTree = "<group>"; };
+		83F6BC821CEA7FD3002B7DC2 /* PLDLinkBankMFABaseStepView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLDLinkBankMFABaseStepView.m; sourceTree = "<group>"; };
+		83F6BC831CEA7FD3002B7DC2 /* PLDLinkBankMFAChoiceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLDLinkBankMFAChoiceView.h; sourceTree = "<group>"; };
+		83F6BC841CEA7FD3002B7DC2 /* PLDLinkBankMFAChoiceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLDLinkBankMFAChoiceView.m; sourceTree = "<group>"; };
+		83F6BC851CEA7FD3002B7DC2 /* PLDLinkBankMFAChoiceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLDLinkBankMFAChoiceViewController.h; sourceTree = "<group>"; };
+		83F6BC861CEA7FD3002B7DC2 /* PLDLinkBankMFAChoiceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLDLinkBankMFAChoiceViewController.m; sourceTree = "<group>"; };
+		83F6BC871CEA7FD3002B7DC2 /* PLDLinkBankMFAContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLDLinkBankMFAContainerView.h; sourceTree = "<group>"; };
+		83F6BC881CEA7FD3002B7DC2 /* PLDLinkBankMFAContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLDLinkBankMFAContainerView.m; sourceTree = "<group>"; };
+		83F6BC891CEA7FD3002B7DC2 /* PLDLinkBankMFAContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLDLinkBankMFAContainerViewController.h; sourceTree = "<group>"; };
+		83F6BC8A1CEA7FD3002B7DC2 /* PLDLinkBankMFAContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLDLinkBankMFAContainerViewController.m; sourceTree = "<group>"; };
+		83F6BC8B1CEA7FD3002B7DC2 /* PLDLinkBankMFAExplainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLDLinkBankMFAExplainerView.h; sourceTree = "<group>"; };
+		83F6BC8C1CEA7FD3002B7DC2 /* PLDLinkBankMFAExplainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLDLinkBankMFAExplainerView.m; sourceTree = "<group>"; };
+		83F6BC8D1CEA7FD3002B7DC2 /* PLDLinkBankMFALoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLDLinkBankMFALoginView.h; sourceTree = "<group>"; };
+		83F6BC8E1CEA7FD3002B7DC2 /* PLDLinkBankMFALoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLDLinkBankMFALoginView.m; sourceTree = "<group>"; };
+		83F6BC8F1CEA7FD3002B7DC2 /* PLDLinkBankMFALoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLDLinkBankMFALoginViewController.h; sourceTree = "<group>"; };
+		83F6BC901CEA7FD3002B7DC2 /* PLDLinkBankMFALoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLDLinkBankMFALoginViewController.m; sourceTree = "<group>"; };
+		83F6BC911CEA7FD3002B7DC2 /* PLDLinkBankMFAQuestionOrCodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLDLinkBankMFAQuestionOrCodeView.h; sourceTree = "<group>"; };
+		83F6BC921CEA7FD3002B7DC2 /* PLDLinkBankMFAQuestionOrCodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLDLinkBankMFAQuestionOrCodeView.m; sourceTree = "<group>"; };
+		83F6BC931CEA7FD3002B7DC2 /* PLDLinkBankMFAQuestionOrCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLDLinkBankMFAQuestionOrCodeViewController.h; sourceTree = "<group>"; };
+		83F6BC941CEA7FD3002B7DC2 /* PLDLinkBankMFAQuestionOrCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLDLinkBankMFAQuestionOrCodeViewController.m; sourceTree = "<group>"; };
+		83F6BC951CEA7FD3002B7DC2 /* PLDLinkBankMFASelectionsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLDLinkBankMFASelectionsView.h; sourceTree = "<group>"; };
+		83F6BC961CEA7FD3002B7DC2 /* PLDLinkBankMFASelectionsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLDLinkBankMFASelectionsView.m; sourceTree = "<group>"; };
+		83F6BC971CEA7FD3002B7DC2 /* PLDLinkBankMFASelectionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLDLinkBankMFASelectionsViewController.h; sourceTree = "<group>"; };
+		83F6BC981CEA7FD3002B7DC2 /* PLDLinkBankMFASelectionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLDLinkBankMFASelectionsViewController.m; sourceTree = "<group>"; };
+		83F6BC991CEA7FD3002B7DC2 /* PLDLinkBankMFASelectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLDLinkBankMFASelectionView.h; sourceTree = "<group>"; };
+		83F6BC9A1CEA7FD3002B7DC2 /* PLDLinkBankMFASelectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLDLinkBankMFASelectionView.m; sourceTree = "<group>"; };
+		83F6BC9B1CEA7FD3002B7DC2 /* PLDLinkBankMFASelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLDLinkBankMFASelectionViewController.h; sourceTree = "<group>"; };
+		83F6BC9C1CEA7FD3002B7DC2 /* PLDLinkBankMFASelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLDLinkBankMFASelectionViewController.m; sourceTree = "<group>"; };
+		83F6BC9D1CEA7FD3002B7DC2 /* PLDLinkBankMFAViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLDLinkBankMFAViewController.h; sourceTree = "<group>"; };
+		83F6BC9E1CEA7FD3002B7DC2 /* PLDLinkBankMFAViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLDLinkBankMFAViewController.m; sourceTree = "<group>"; };
+		83F6BC9F1CEA7FD3002B7DC2 /* PLDLinkBankSelectionSearchResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLDLinkBankSelectionSearchResultsViewController.h; sourceTree = "<group>"; };
+		83F6BCA01CEA7FD3002B7DC2 /* PLDLinkBankSelectionSearchResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLDLinkBankSelectionSearchResultsViewController.m; sourceTree = "<group>"; };
+		83F6BCA11CEA7FD3002B7DC2 /* PLDLinkBankSelectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLDLinkBankSelectionView.h; sourceTree = "<group>"; };
+		83F6BCA21CEA7FD3002B7DC2 /* PLDLinkBankSelectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLDLinkBankSelectionView.m; sourceTree = "<group>"; };
+		83F6BCA31CEA7FD3002B7DC2 /* PLDLinkBankSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLDLinkBankSelectionViewController.h; sourceTree = "<group>"; };
+		83F6BCA41CEA7FD3002B7DC2 /* PLDLinkBankSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLDLinkBankSelectionViewController.m; sourceTree = "<group>"; };
+		83F6BCA51CEA7FD3002B7DC2 /* PLDLinkBankTileView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLDLinkBankTileView.h; sourceTree = "<group>"; };
+		83F6BCA61CEA7FD3002B7DC2 /* PLDLinkBankTileView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLDLinkBankTileView.m; sourceTree = "<group>"; };
+		83F6BCA71CEA7FD3002B7DC2 /* PLDLinkNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLDLinkNavigationViewController.h; sourceTree = "<group>"; };
+		83F6BCA81CEA7FD3002B7DC2 /* PLDLinkNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLDLinkNavigationViewController.m; sourceTree = "<group>"; };
+		83F6BCA91CEA7FD3002B7DC2 /* PLDLinkResourceBundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLDLinkResourceBundle.h; sourceTree = "<group>"; };
+		83F6BCAA1CEA7FD3002B7DC2 /* PLDLinkResourceBundle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLDLinkResourceBundle.m; sourceTree = "<group>"; };
+		83F6BCAB1CEA7FD3002B7DC2 /* PLDLinkSelectionToLoginAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLDLinkSelectionToLoginAnimator.h; sourceTree = "<group>"; };
+		83F6BCAC1CEA7FD3002B7DC2 /* PLDLinkSelectionToLoginAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLDLinkSelectionToLoginAnimator.m; sourceTree = "<group>"; };
+		83F6BCAD1CEA7FD3002B7DC2 /* PLDLinkStyledButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLDLinkStyledButton.h; sourceTree = "<group>"; };
+		83F6BCAE1CEA7FD3002B7DC2 /* PLDLinkStyledButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLDLinkStyledButton.m; sourceTree = "<group>"; };
+		83F6BCAF1CEA7FD3002B7DC2 /* PLDLinkStyledTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLDLinkStyledTextField.h; sourceTree = "<group>"; };
+		83F6BCB01CEA7FD3002B7DC2 /* PLDLinkStyledTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLDLinkStyledTextField.m; sourceTree = "<group>"; };
+		83F6BCB11CEA7FD3002B7DC2 /* UIColor+PLDLinkUIColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+PLDLinkUIColor.h"; sourceTree = "<group>"; };
+		83F6BCB21CEA7FD3002B7DC2 /* UIColor+PLDLinkUIColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+PLDLinkUIColor.m"; sourceTree = "<group>"; };
+		83F6BCB51CEA7FD3002B7DC2 /* amex.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = amex.png; sourceTree = "<group>"; };
+		83F6BCB61CEA7FD3002B7DC2 /* amex@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "amex@2x.png"; sourceTree = "<group>"; };
+		83F6BCB71CEA7FD3002B7DC2 /* amex@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "amex@3x.png"; sourceTree = "<group>"; };
+		83F6BCB81CEA7FD3002B7DC2 /* bofa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bofa.png; sourceTree = "<group>"; };
+		83F6BCB91CEA7FD3002B7DC2 /* bofa@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bofa@2x.png"; sourceTree = "<group>"; };
+		83F6BCBA1CEA7FD3002B7DC2 /* bofa@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bofa@3x.png"; sourceTree = "<group>"; };
+		83F6BCBB1CEA7FD3002B7DC2 /* capone360.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = capone360.png; sourceTree = "<group>"; };
+		83F6BCBC1CEA7FD3002B7DC2 /* capone360@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "capone360@2x.png"; sourceTree = "<group>"; };
+		83F6BCBD1CEA7FD3002B7DC2 /* capone360@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "capone360@3x.png"; sourceTree = "<group>"; };
+		83F6BCBE1CEA7FD3002B7DC2 /* chase.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chase.png; sourceTree = "<group>"; };
+		83F6BCBF1CEA7FD3002B7DC2 /* chase@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chase@2x.png"; sourceTree = "<group>"; };
+		83F6BCC01CEA7FD3002B7DC2 /* chase@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chase@3x.png"; sourceTree = "<group>"; };
+		83F6BCC11CEA7FD3002B7DC2 /* citi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = citi.png; sourceTree = "<group>"; };
+		83F6BCC21CEA7FD3002B7DC2 /* citi@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "citi@2x.png"; sourceTree = "<group>"; };
+		83F6BCC31CEA7FD3002B7DC2 /* citi@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "citi@3x.png"; sourceTree = "<group>"; };
+		83F6BCC41CEA7FD3002B7DC2 /* fidelity.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fidelity.png; sourceTree = "<group>"; };
+		83F6BCC51CEA7FD3002B7DC2 /* fidelity@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fidelity@2x.png"; sourceTree = "<group>"; };
+		83F6BCC61CEA7FD3002B7DC2 /* fidelity@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fidelity@3x.png"; sourceTree = "<group>"; };
+		83F6BCC71CEA7FD3002B7DC2 /* nfcu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nfcu.png; sourceTree = "<group>"; };
+		83F6BCC81CEA7FD3002B7DC2 /* nfcu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nfcu@2x.png"; sourceTree = "<group>"; };
+		83F6BCC91CEA7FD3002B7DC2 /* nfcu@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nfcu@3x.png"; sourceTree = "<group>"; };
+		83F6BCCA1CEA7FD3002B7DC2 /* pnc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pnc.png; sourceTree = "<group>"; };
+		83F6BCCB1CEA7FD3002B7DC2 /* pnc@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pnc@2x.png"; sourceTree = "<group>"; };
+		83F6BCCC1CEA7FD3002B7DC2 /* pnc@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pnc@3x.png"; sourceTree = "<group>"; };
+		83F6BCCD1CEA7FD3002B7DC2 /* schwab.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = schwab.png; sourceTree = "<group>"; };
+		83F6BCCE1CEA7FD3002B7DC2 /* schwab@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "schwab@2x.png"; sourceTree = "<group>"; };
+		83F6BCCF1CEA7FD3002B7DC2 /* schwab@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "schwab@3x.png"; sourceTree = "<group>"; };
+		83F6BCD01CEA7FD3002B7DC2 /* suntrust.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = suntrust.png; sourceTree = "<group>"; };
+		83F6BCD11CEA7FD3002B7DC2 /* suntrust@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "suntrust@2x.png"; sourceTree = "<group>"; };
+		83F6BCD21CEA7FD3002B7DC2 /* suntrust@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "suntrust@3x.png"; sourceTree = "<group>"; };
+		83F6BCD31CEA7FD3002B7DC2 /* svb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = svb.png; sourceTree = "<group>"; };
+		83F6BCD41CEA7FD3002B7DC2 /* svb@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "svb@2x.png"; sourceTree = "<group>"; };
+		83F6BCD51CEA7FD3002B7DC2 /* svb@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "svb@3x.png"; sourceTree = "<group>"; };
+		83F6BCD61CEA7FD3002B7DC2 /* td.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = td.png; sourceTree = "<group>"; };
+		83F6BCD71CEA7FD3002B7DC2 /* td@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "td@2x.png"; sourceTree = "<group>"; };
+		83F6BCD81CEA7FD3002B7DC2 /* td@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "td@3x.png"; sourceTree = "<group>"; };
+		83F6BCD91CEA7FD3002B7DC2 /* us.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = us.png; sourceTree = "<group>"; };
+		83F6BCDA1CEA7FD3002B7DC2 /* us@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "us@2x.png"; sourceTree = "<group>"; };
+		83F6BCDB1CEA7FD3002B7DC2 /* us@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "us@3x.png"; sourceTree = "<group>"; };
+		83F6BCDC1CEA7FD3002B7DC2 /* usaa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = usaa.png; sourceTree = "<group>"; };
+		83F6BCDD1CEA7FD3002B7DC2 /* usaa@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "usaa@2x.png"; sourceTree = "<group>"; };
+		83F6BCDE1CEA7FD3002B7DC2 /* usaa@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "usaa@3x.png"; sourceTree = "<group>"; };
+		83F6BCDF1CEA7FD3002B7DC2 /* wells.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wells.png; sourceTree = "<group>"; };
+		83F6BCE01CEA7FD3002B7DC2 /* wells@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wells@2x.png"; sourceTree = "<group>"; };
+		83F6BCE11CEA7FD3002B7DC2 /* wells@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wells@3x.png"; sourceTree = "<group>"; };
+		83F6BCE31CEA7FD3002B7DC2 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		83F6BCE41CEA7FD3002B7DC2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +274,7 @@
 		832A75FD1CC9885600FEA998 = {
 			isa = PBXGroup;
 			children = (
+				83F6BC7A1CEA7FC0002B7DC2 /* Vendor */,
 				832A76081CC9885600FEA998 /* Balance */,
 				832A76071CC9885600FEA998 /* Products */,
 				0722F017E73C2FB39C246E7D /* Pods */,
@@ -205,6 +382,162 @@
 			name = Segues;
 			sourceTree = "<group>";
 		};
+		83F6BC7A1CEA7FC0002B7DC2 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				83F6BC7B1CEA7FD3002B7DC2 /* plaid-ios-link */,
+			);
+			name = Vendor;
+			sourceTree = "<group>";
+		};
+		83F6BC7B1CEA7FD3002B7DC2 /* plaid-ios-link */ = {
+			isa = PBXGroup;
+			children = (
+				83F6BC7C1CEA7FD3002B7DC2 /* LICENSE */,
+				83F6BC7D1CEA7FD3002B7DC2 /* PlaidLink */,
+				83F6BCE41CEA7FD3002B7DC2 /* README.md */,
+			);
+			name = "plaid-ios-link";
+			path = "Vendor/plaid-ios-link";
+			sourceTree = "<group>";
+		};
+		83F6BC7D1CEA7FD3002B7DC2 /* PlaidLink */ = {
+			isa = PBXGroup;
+			children = (
+				83F6BC7E1CEA7FD3002B7DC2 /* Classes */,
+				83F6BCB31CEA7FD3002B7DC2 /* Resources */,
+			);
+			path = PlaidLink;
+			sourceTree = "<group>";
+		};
+		83F6BC7E1CEA7FD3002B7DC2 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				83F6BC7F1CEA7FD3002B7DC2 /* NSString+Localization.h */,
+				83F6BC801CEA7FD3002B7DC2 /* NSString+Localization.m */,
+				83F6BC811CEA7FD3002B7DC2 /* PLDLinkBankMFABaseStepView.h */,
+				83F6BC821CEA7FD3002B7DC2 /* PLDLinkBankMFABaseStepView.m */,
+				83F6BC831CEA7FD3002B7DC2 /* PLDLinkBankMFAChoiceView.h */,
+				83F6BC841CEA7FD3002B7DC2 /* PLDLinkBankMFAChoiceView.m */,
+				83F6BC851CEA7FD3002B7DC2 /* PLDLinkBankMFAChoiceViewController.h */,
+				83F6BC861CEA7FD3002B7DC2 /* PLDLinkBankMFAChoiceViewController.m */,
+				83F6BC871CEA7FD3002B7DC2 /* PLDLinkBankMFAContainerView.h */,
+				83F6BC881CEA7FD3002B7DC2 /* PLDLinkBankMFAContainerView.m */,
+				83F6BC891CEA7FD3002B7DC2 /* PLDLinkBankMFAContainerViewController.h */,
+				83F6BC8A1CEA7FD3002B7DC2 /* PLDLinkBankMFAContainerViewController.m */,
+				83F6BC8B1CEA7FD3002B7DC2 /* PLDLinkBankMFAExplainerView.h */,
+				83F6BC8C1CEA7FD3002B7DC2 /* PLDLinkBankMFAExplainerView.m */,
+				83F6BC8D1CEA7FD3002B7DC2 /* PLDLinkBankMFALoginView.h */,
+				83F6BC8E1CEA7FD3002B7DC2 /* PLDLinkBankMFALoginView.m */,
+				83F6BC8F1CEA7FD3002B7DC2 /* PLDLinkBankMFALoginViewController.h */,
+				83F6BC901CEA7FD3002B7DC2 /* PLDLinkBankMFALoginViewController.m */,
+				83F6BC911CEA7FD3002B7DC2 /* PLDLinkBankMFAQuestionOrCodeView.h */,
+				83F6BC921CEA7FD3002B7DC2 /* PLDLinkBankMFAQuestionOrCodeView.m */,
+				83F6BC931CEA7FD3002B7DC2 /* PLDLinkBankMFAQuestionOrCodeViewController.h */,
+				83F6BC941CEA7FD3002B7DC2 /* PLDLinkBankMFAQuestionOrCodeViewController.m */,
+				83F6BC951CEA7FD3002B7DC2 /* PLDLinkBankMFASelectionsView.h */,
+				83F6BC961CEA7FD3002B7DC2 /* PLDLinkBankMFASelectionsView.m */,
+				83F6BC971CEA7FD3002B7DC2 /* PLDLinkBankMFASelectionsViewController.h */,
+				83F6BC981CEA7FD3002B7DC2 /* PLDLinkBankMFASelectionsViewController.m */,
+				83F6BC991CEA7FD3002B7DC2 /* PLDLinkBankMFASelectionView.h */,
+				83F6BC9A1CEA7FD3002B7DC2 /* PLDLinkBankMFASelectionView.m */,
+				83F6BC9B1CEA7FD3002B7DC2 /* PLDLinkBankMFASelectionViewController.h */,
+				83F6BC9C1CEA7FD3002B7DC2 /* PLDLinkBankMFASelectionViewController.m */,
+				83F6BC9D1CEA7FD3002B7DC2 /* PLDLinkBankMFAViewController.h */,
+				83F6BC9E1CEA7FD3002B7DC2 /* PLDLinkBankMFAViewController.m */,
+				83F6BC9F1CEA7FD3002B7DC2 /* PLDLinkBankSelectionSearchResultsViewController.h */,
+				83F6BCA01CEA7FD3002B7DC2 /* PLDLinkBankSelectionSearchResultsViewController.m */,
+				83F6BCA11CEA7FD3002B7DC2 /* PLDLinkBankSelectionView.h */,
+				83F6BCA21CEA7FD3002B7DC2 /* PLDLinkBankSelectionView.m */,
+				83F6BCA31CEA7FD3002B7DC2 /* PLDLinkBankSelectionViewController.h */,
+				83F6BCA41CEA7FD3002B7DC2 /* PLDLinkBankSelectionViewController.m */,
+				83F6BCA51CEA7FD3002B7DC2 /* PLDLinkBankTileView.h */,
+				83F6BCA61CEA7FD3002B7DC2 /* PLDLinkBankTileView.m */,
+				83F6BCA71CEA7FD3002B7DC2 /* PLDLinkNavigationViewController.h */,
+				83F6BCA81CEA7FD3002B7DC2 /* PLDLinkNavigationViewController.m */,
+				83F6BCA91CEA7FD3002B7DC2 /* PLDLinkResourceBundle.h */,
+				83F6BCAA1CEA7FD3002B7DC2 /* PLDLinkResourceBundle.m */,
+				83F6BCAB1CEA7FD3002B7DC2 /* PLDLinkSelectionToLoginAnimator.h */,
+				83F6BCAC1CEA7FD3002B7DC2 /* PLDLinkSelectionToLoginAnimator.m */,
+				83F6BCAD1CEA7FD3002B7DC2 /* PLDLinkStyledButton.h */,
+				83F6BCAE1CEA7FD3002B7DC2 /* PLDLinkStyledButton.m */,
+				83F6BCAF1CEA7FD3002B7DC2 /* PLDLinkStyledTextField.h */,
+				83F6BCB01CEA7FD3002B7DC2 /* PLDLinkStyledTextField.m */,
+				83F6BCB11CEA7FD3002B7DC2 /* UIColor+PLDLinkUIColor.h */,
+				83F6BCB21CEA7FD3002B7DC2 /* UIColor+PLDLinkUIColor.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		83F6BCB31CEA7FD3002B7DC2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				83F6BCB41CEA7FD3002B7DC2 /* Images */,
+				83F6BCE21CEA7FD3002B7DC2 /* Strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		83F6BCB41CEA7FD3002B7DC2 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				83F6BCB51CEA7FD3002B7DC2 /* amex.png */,
+				83F6BCB61CEA7FD3002B7DC2 /* amex@2x.png */,
+				83F6BCB71CEA7FD3002B7DC2 /* amex@3x.png */,
+				83F6BCB81CEA7FD3002B7DC2 /* bofa.png */,
+				83F6BCB91CEA7FD3002B7DC2 /* bofa@2x.png */,
+				83F6BCBA1CEA7FD3002B7DC2 /* bofa@3x.png */,
+				83F6BCBB1CEA7FD3002B7DC2 /* capone360.png */,
+				83F6BCBC1CEA7FD3002B7DC2 /* capone360@2x.png */,
+				83F6BCBD1CEA7FD3002B7DC2 /* capone360@3x.png */,
+				83F6BCBE1CEA7FD3002B7DC2 /* chase.png */,
+				83F6BCBF1CEA7FD3002B7DC2 /* chase@2x.png */,
+				83F6BCC01CEA7FD3002B7DC2 /* chase@3x.png */,
+				83F6BCC11CEA7FD3002B7DC2 /* citi.png */,
+				83F6BCC21CEA7FD3002B7DC2 /* citi@2x.png */,
+				83F6BCC31CEA7FD3002B7DC2 /* citi@3x.png */,
+				83F6BCC41CEA7FD3002B7DC2 /* fidelity.png */,
+				83F6BCC51CEA7FD3002B7DC2 /* fidelity@2x.png */,
+				83F6BCC61CEA7FD3002B7DC2 /* fidelity@3x.png */,
+				83F6BCC71CEA7FD3002B7DC2 /* nfcu.png */,
+				83F6BCC81CEA7FD3002B7DC2 /* nfcu@2x.png */,
+				83F6BCC91CEA7FD3002B7DC2 /* nfcu@3x.png */,
+				83F6BCCA1CEA7FD3002B7DC2 /* pnc.png */,
+				83F6BCCB1CEA7FD3002B7DC2 /* pnc@2x.png */,
+				83F6BCCC1CEA7FD3002B7DC2 /* pnc@3x.png */,
+				83F6BCCD1CEA7FD3002B7DC2 /* schwab.png */,
+				83F6BCCE1CEA7FD3002B7DC2 /* schwab@2x.png */,
+				83F6BCCF1CEA7FD3002B7DC2 /* schwab@3x.png */,
+				83F6BCD01CEA7FD3002B7DC2 /* suntrust.png */,
+				83F6BCD11CEA7FD3002B7DC2 /* suntrust@2x.png */,
+				83F6BCD21CEA7FD3002B7DC2 /* suntrust@3x.png */,
+				83F6BCD31CEA7FD3002B7DC2 /* svb.png */,
+				83F6BCD41CEA7FD3002B7DC2 /* svb@2x.png */,
+				83F6BCD51CEA7FD3002B7DC2 /* svb@3x.png */,
+				83F6BCD61CEA7FD3002B7DC2 /* td.png */,
+				83F6BCD71CEA7FD3002B7DC2 /* td@2x.png */,
+				83F6BCD81CEA7FD3002B7DC2 /* td@3x.png */,
+				83F6BCD91CEA7FD3002B7DC2 /* us.png */,
+				83F6BCDA1CEA7FD3002B7DC2 /* us@2x.png */,
+				83F6BCDB1CEA7FD3002B7DC2 /* us@3x.png */,
+				83F6BCDC1CEA7FD3002B7DC2 /* usaa.png */,
+				83F6BCDD1CEA7FD3002B7DC2 /* usaa@2x.png */,
+				83F6BCDE1CEA7FD3002B7DC2 /* usaa@3x.png */,
+				83F6BCDF1CEA7FD3002B7DC2 /* wells.png */,
+				83F6BCE01CEA7FD3002B7DC2 /* wells@2x.png */,
+				83F6BCE11CEA7FD3002B7DC2 /* wells@3x.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		83F6BCE21CEA7FD3002B7DC2 /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				83F6BCE31CEA7FD3002B7DC2 /* Localizable.strings */,
+			);
+			path = Strings;
+			sourceTree = "<group>";
+		};
 		B978E18B10E306D141073A3E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -273,10 +606,58 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83F6BD091CEA7FD3002B7DC2 /* chase.png in Resources */,
+				83F6BD101CEA7FD3002B7DC2 /* fidelity@2x.png in Resources */,
+				83F6BD191CEA7FD3002B7DC2 /* schwab@2x.png in Resources */,
+				83F6BD1B1CEA7FD3002B7DC2 /* suntrust.png in Resources */,
+				83F6BCE51CEA7FD3002B7DC2 /* LICENSE in Resources */,
+				83F6BD241CEA7FD3002B7DC2 /* us.png in Resources */,
+				83F6BD221CEA7FD3002B7DC2 /* td@2x.png in Resources */,
+				83F6BD171CEA7FD3002B7DC2 /* pnc@3x.png in Resources */,
+				83F6BD151CEA7FD3002B7DC2 /* pnc.png in Resources */,
+				83F6BD2D1CEA7FD3002B7DC2 /* Localizable.strings in Resources */,
+				83F6BD1E1CEA7FD3002B7DC2 /* svb.png in Resources */,
+				83F6BD1F1CEA7FD3002B7DC2 /* svb@2x.png in Resources */,
+				83F6BD2C1CEA7FD3002B7DC2 /* wells@3x.png in Resources */,
+				83F6BD0B1CEA7FD3002B7DC2 /* chase@3x.png in Resources */,
+				83F6BD2B1CEA7FD3002B7DC2 /* wells@2x.png in Resources */,
+				83F6BD0F1CEA7FD3002B7DC2 /* fidelity.png in Resources */,
+				83F6BD0A1CEA7FD3002B7DC2 /* chase@2x.png in Resources */,
+				83F6BD051CEA7FD3002B7DC2 /* bofa@3x.png in Resources */,
+				83F6BD161CEA7FD3002B7DC2 /* pnc@2x.png in Resources */,
+				83F6BD031CEA7FD3002B7DC2 /* bofa.png in Resources */,
+				83F6BD201CEA7FD3002B7DC2 /* svb@3x.png in Resources */,
+				83F6BD061CEA7FD3002B7DC2 /* capone360.png in Resources */,
+				83F6BD291CEA7FD3002B7DC2 /* usaa@3x.png in Resources */,
+				83F6BD181CEA7FD3002B7DC2 /* schwab.png in Resources */,
+				83F6BD2A1CEA7FD3002B7DC2 /* wells.png in Resources */,
 				832A76191CC9885600FEA998 /* LaunchScreen.storyboard in Resources */,
 				832A76161CC9885600FEA998 /* Assets.xcassets in Resources */,
+				83F6BD081CEA7FD3002B7DC2 /* capone360@3x.png in Resources */,
+				83F6BD011CEA7FD3002B7DC2 /* amex@2x.png in Resources */,
+				83F6BD141CEA7FD3002B7DC2 /* nfcu@3x.png in Resources */,
+				83F6BD021CEA7FD3002B7DC2 /* amex@3x.png in Resources */,
+				83F6BD0C1CEA7FD3002B7DC2 /* citi.png in Resources */,
+				83F6BD211CEA7FD3002B7DC2 /* td.png in Resources */,
+				83F6BD1C1CEA7FD3002B7DC2 /* suntrust@2x.png in Resources */,
+				83F6BD111CEA7FD3002B7DC2 /* fidelity@3x.png in Resources */,
 				832A76141CC9885600FEA998 /* Main.storyboard in Resources */,
+				83F6BD1D1CEA7FD3002B7DC2 /* suntrust@3x.png in Resources */,
 				83D8F2911CE43BB300D7238A /* HeaderView.xib in Resources */,
+				83F6BD261CEA7FD3002B7DC2 /* us@3x.png in Resources */,
+				83F6BD071CEA7FD3002B7DC2 /* capone360@2x.png in Resources */,
+				83F6BD041CEA7FD3002B7DC2 /* bofa@2x.png in Resources */,
+				83F6BD0D1CEA7FD3002B7DC2 /* citi@2x.png in Resources */,
+				83F6BD231CEA7FD3002B7DC2 /* td@3x.png in Resources */,
+				83F6BD1A1CEA7FD3002B7DC2 /* schwab@3x.png in Resources */,
+				83F6BD251CEA7FD3002B7DC2 /* us@2x.png in Resources */,
+				83F6BD121CEA7FD3002B7DC2 /* nfcu.png in Resources */,
+				83F6BD271CEA7FD3002B7DC2 /* usaa.png in Resources */,
+				83F6BD281CEA7FD3002B7DC2 /* usaa@2x.png in Resources */,
+				83F6BD131CEA7FD3002B7DC2 /* nfcu@2x.png in Resources */,
+				83F6BD001CEA7FD3002B7DC2 /* amex.png in Resources */,
+				83F6BD0E1CEA7FD3002B7DC2 /* citi@3x.png in Resources */,
+				83F6BC751CEA7C74002B7DC2 /* plaid-ios-link in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,19 +719,46 @@
 				83EA1D091CD166DD002F2DDF /* AddAccountTableViewController.m in Sources */,
 				835961CD1CCA0A4200D22A10 /* UIButton+ActivityIndicatorView.m in Sources */,
 				83EA1D0C1CD18D41002F2DDF /* AccountManager.m in Sources */,
+				83F6BCFA1CEA7FD3002B7DC2 /* PLDLinkNavigationViewController.m in Sources */,
+				83F6BCFB1CEA7FD3002B7DC2 /* PLDLinkResourceBundle.m in Sources */,
 				835961CA1CCA0A4200D22A10 /* NSDate+AddDays.m in Sources */,
+				83F6BCF71CEA7FD3002B7DC2 /* PLDLinkBankSelectionView.m in Sources */,
+				83F6BCFD1CEA7FD3002B7DC2 /* PLDLinkStyledButton.m in Sources */,
+				83F6BCFF1CEA7FD3002B7DC2 /* UIColor+PLDLinkUIColor.m in Sources */,
+				83F6BCE81CEA7FD3002B7DC2 /* PLDLinkBankMFAChoiceView.m in Sources */,
+				83F6BCF81CEA7FD3002B7DC2 /* PLDLinkBankSelectionViewController.m in Sources */,
 				83D8F28D1CE181CA00D7238A /* NSDictionary+StringValue.m in Sources */,
 				835961D01CCA1E4600D22A10 /* Adapter.m in Sources */,
+				83F6BCF31CEA7FD3002B7DC2 /* PLDLinkBankMFASelectionView.m in Sources */,
 				835961CB1CCA0A4200D22A10 /* NSDateFormatter+DateFormat.m in Sources */,
+				83F6BCEC1CEA7FD3002B7DC2 /* PLDLinkBankMFAExplainerView.m in Sources */,
 				835961D61CCC073E00D22A10 /* HomeTableViewController.m in Sources */,
 				835961CC1CCA0A4200D22A10 /* UIAlertView+Error.m in Sources */,
+				83F6BCE61CEA7FD3002B7DC2 /* NSString+Localization.m in Sources */,
+				83F6BCF41CEA7FD3002B7DC2 /* PLDLinkBankMFASelectionViewController.m in Sources */,
+				83F6BCE91CEA7FD3002B7DC2 /* PLDLinkBankMFAChoiceViewController.m in Sources */,
+				83F6BCF21CEA7FD3002B7DC2 /* PLDLinkBankMFASelectionsViewController.m in Sources */,
+				83F6BCF01CEA7FD3002B7DC2 /* PLDLinkBankMFAQuestionOrCodeViewController.m in Sources */,
+				83F6BD2E1CEA7FD3002B7DC2 /* README.md in Sources */,
 				832A760E1CC9885600FEA998 /* AppDelegate.m in Sources */,
+				83F6BCFE1CEA7FD3002B7DC2 /* PLDLinkStyledTextField.m in Sources */,
+				83F6BCEA1CEA7FD3002B7DC2 /* PLDLinkBankMFAContainerView.m in Sources */,
 				835961BD1CC9FA9100D22A10 /* AccountObject.m in Sources */,
+				83F6BCF61CEA7FD3002B7DC2 /* PLDLinkBankSelectionSearchResultsViewController.m in Sources */,
+				83F6BCF91CEA7FD3002B7DC2 /* PLDLinkBankTileView.m in Sources */,
 				83D8F2941CE476BA00D7238A /* HeaderView.m in Sources */,
+				83F6BCEB1CEA7FD3002B7DC2 /* PLDLinkBankMFAContainerViewController.m in Sources */,
+				83F6BCFC1CEA7FD3002B7DC2 /* PLDLinkSelectionToLoginAnimator.m in Sources */,
+				83F6BCF51CEA7FD3002B7DC2 /* PLDLinkBankMFAViewController.m in Sources */,
+				83F6BCEF1CEA7FD3002B7DC2 /* PLDLinkBankMFAQuestionOrCodeView.m in Sources */,
 				832A760B1CC9885600FEA998 /* main.m in Sources */,
 				832A76221CC98B8600FEA998 /* AppConstants.m in Sources */,
+				83F6BCEE1CEA7FD3002B7DC2 /* PLDLinkBankMFALoginViewController.m in Sources */,
+				83F6BCE71CEA7FD3002B7DC2 /* PLDLinkBankMFABaseStepView.m in Sources */,
 				835961BA1CC9F8D100D22A10 /* TransactionObject.m in Sources */,
+				83F6BCED1CEA7FD3002B7DC2 /* PLDLinkBankMFALoginView.m in Sources */,
 				835961D31CCC072800D22A10 /* AccountsTableViewController.m in Sources */,
+				83F6BCF11CEA7FD3002B7DC2 /* PLDLinkBankMFASelectionsView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,6 +825,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/Vendor/**";
 			};
 			name = Debug;
 		};
@@ -454,6 +863,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/Vendor/**";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
