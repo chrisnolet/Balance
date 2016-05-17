@@ -154,7 +154,7 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         AccountObject *account = self.accounts[indexPath.row];
 
-        [account remove];
+        [[AccountManager sharedInstance] removeAccount:account];
     }
 }
 
@@ -205,9 +205,8 @@
         }
 
         // Show list of bank accounts
-        [self dismissViewControllerAnimated:YES completion:^{
-            [self performSegueWithIdentifier:@"AddAccountSegue" sender:accounts];
-        }];
+        [self performSegueWithIdentifier:@"AddAccountSegue" sender:accounts];
+        [self dismissViewControllerAnimated:YES completion:nil];
     }];
 }
 

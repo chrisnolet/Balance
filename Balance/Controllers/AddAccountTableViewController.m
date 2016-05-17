@@ -10,10 +10,22 @@
 #import "AccountManager.h"
 #import "AccountObject.h"
 
+@interface AddAccountTableViewController ()
+
+@property (strong, nonatomic) NSMutableArray *selectedAccounts;
+
+@end
+
 @implementation AddAccountTableViewController
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - UIViewController
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+- (void)viewDidLoad
+{
+    self.selectedAccounts = [[NSMutableArray alloc] init];
+}
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 - (UIStatusBarStyle)preferredStatusBarStyle
@@ -26,14 +38,17 @@
 {
     if ([segue.identifier isEqualToString:@"UnwindFromAddAccountSegue"]) {
 
-        // Save the selected account
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        AccountObject *account = self.accounts[indexPath.row];
+        // Re-order selected accounts
+        NSMutableArray *orderedAccounts = [NSMutableArray arrayWithCapacity:[self.selectedAccounts count]];
 
-        [account save];
+        for (AccountObject *account in self.accounts) {
+            if ([self.selectedAccounts containsObject:account]) {
+                [orderedAccounts addObject:account];
+            }
+        }
 
-        // Update transactions
-        [[AccountManager sharedInstance] updateAccounts];
+        // Add the selected accounts
+        [[AccountManager sharedInstance] addAccounts:orderedAccounts];
     }
 }
 
@@ -63,13 +78,37 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    return @"Select Account";
+    return @"Select Accounts";
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 - (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
 {
-    return @"Select an account that you would like to include in your total balance.";
+    return @"Select accounts that you would like to include in your total balance.";
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - UITableViewDelegate
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+
+    // Add or remove selected account
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    AccountObject *account = self.accounts[indexPath.row];
+
+    if ([self.selectedAccounts containsObject:account]) {
+        [self.selectedAccounts removeObject:account];
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    } else {
+        [self.selectedAccounts addObject:account];
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }
+
+    // Enable done button with selection
+    self.doneBarButtonItem.enabled = ([self.selectedAccounts count] > 0);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

@@ -183,9 +183,6 @@
                                 </tableViewCellContentView>
                                 <edgeInsets key="layoutMargins" top="8" left="0.0" bottom="8" right="8"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <connections>
-                                    <segue destination="8dE-8D-vwR" kind="unwind" identifier="UnwindFromAddAccountSegue" unwindAction="unwindFromAddAccountSegue:" id="iJ7-u7-Zbd"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -199,7 +196,15 @@
                                 <action selector="cancelBarButtonItemPressed:" destination="QS3-hk-Eds" id="9vZ-j1-bf6"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="done" id="nOx-5j-wXd">
+                            <connections>
+                                <segue destination="8dE-8D-vwR" kind="unwind" identifier="UnwindFromAddAccountSegue" unwindAction="unwindFromAddAccountSegue:" id="mdY-SS-Jb8"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="doneBarButtonItem" destination="nOx-5j-wXd" id="bMu-JX-GJe"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NSr-WK-kNh" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="8dE-8D-vwR" userLabel="Exit" sceneMemberID="exit"/>

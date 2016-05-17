@@ -24,7 +24,5 @@
 @property (nonatomic, readonly) NSString *formattedBalance;
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary accessToken:(NSString *)accessToken;
-- (void)save;
-- (void)remove;
 
 @end

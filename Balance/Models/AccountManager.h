@@ -6,10 +6,14 @@
 //  Copyright © 2016 Relaunch. All rights reserved.
 //
 
+#import "AccountObject.h"
+
 @interface AccountManager : NSObject
 
 + (instancetype)sharedInstance;
 
+- (void)addAccounts:(NSArray *)accounts;
+- (void)removeAccount:(AccountObject *)account;
 - (void)updateAccounts;
 - (void)accountsForPublicToken:(NSString *)publicToken completion:(void (^)(NSArray *accounts, NSError *error))completion;
 

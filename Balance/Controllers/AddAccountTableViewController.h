@@ -8,6 +8,8 @@
 
 @interface AddAccountTableViewController : UITableViewController
 
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *doneBarButtonItem;
+
 @property (strong, nonatomic) NSArray *accounts;
 
 - (IBAction)cancelBarButtonItemPressed:(id)sender;

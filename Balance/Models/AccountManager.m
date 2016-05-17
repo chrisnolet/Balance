@@ -9,7 +9,6 @@
 #import <Realm/Realm.h>
 #import "AccountManager.h"
 #import "Adapter.h"
-#import "AccountObject.h"
 #import "TransactionObject.h"
 #import "NSDate+AddDays.h"
 #import "NSDateFormatter+DateFormat.h"
@@ -44,6 +43,31 @@
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Public methods
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+- (void)addAccounts:(NSArray *)accounts
+{
+    // Save accounts
+    RLMRealm *realm = [RLMRealm defaultRealm];
+
+    [realm beginWriteTransaction];
+    [realm addOrUpdateObjectsFromArray:accounts];
+    [realm commitWriteTransaction];
+
+    // Update transactions
+    [self updateAccounts];
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+- (void)removeAccount:(AccountObject *)account
+{
+    RLMRealm *realm = [RLMRealm defaultRealm];
+
+    [realm beginWriteTransaction];
+    [realm deleteObjects:account.transactions];
+    [realm deleteObject:account];
+    [realm commitWriteTransaction];
+}
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)updateAccounts

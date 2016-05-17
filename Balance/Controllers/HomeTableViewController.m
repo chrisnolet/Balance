@@ -138,6 +138,7 @@
     // Fill the table view width
     headerView.frame = CGRectMake(0, 0, self.tableView.frame.size.width, headerView.frame.size.height);
 
+    // Adjust content for header view
     self.tableView.contentInset = UIEdgeInsetsMake(headerView.frame.size.height, 0, 0, 0);
     self.tableView.contentOffset = CGPointMake(0, -headerView.frame.size.height);
 
