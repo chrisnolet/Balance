@@ -103,7 +103,7 @@
             AccountObject *account = self.accounts[indexPath.row];
 
             UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
-            cell.textLabel.text = account.name;
+            cell.textLabel.text = account.formattedName;
             cell.detailTextLabel.text = account.formattedBalance;
 
             return cell;
