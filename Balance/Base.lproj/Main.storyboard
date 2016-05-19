@@ -40,7 +40,7 @@
                                 <edgeInsets key="layoutMargins" top="8" left="0.0" bottom="8" right="8"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="tRe-LF-2o7">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="tRe-LF-2o7" customClass="TableViewCell">
                                 <rect key="frame" x="0.0" y="83" width="320" height="55"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tRe-LF-2o7" id="TBe-WW-OQ3">
@@ -63,13 +63,17 @@
                                     <constraints>
                                         <constraint firstItem="bdc-KH-WRx" firstAttribute="centerY" secondItem="TBe-WW-OQ3" secondAttribute="centerY" id="9xv-Ep-r8Y"/>
                                         <constraint firstItem="bdc-KH-WRx" firstAttribute="leading" secondItem="TBe-WW-OQ3" secondAttribute="leading" constant="15" id="B8Y-aK-TSq"/>
-                                        <constraint firstItem="6f3-OR-KFE" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="bdc-KH-WRx" secondAttribute="trailing" constant="20" id="Bsa-gJ-PfS"/>
+                                        <constraint firstItem="6f3-OR-KFE" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="bdc-KH-WRx" secondAttribute="trailing" constant="8" id="Bsa-gJ-PfS"/>
                                         <constraint firstItem="6f3-OR-KFE" firstAttribute="centerY" secondItem="TBe-WW-OQ3" secondAttribute="centerY" id="bQa-hr-rpO"/>
                                         <constraint firstAttribute="trailing" secondItem="6f3-OR-KFE" secondAttribute="trailing" constant="15" id="q9T-Ub-bZe"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <edgeInsets key="layoutMargins" top="8" left="0.0" bottom="8" right="8"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <connections>
+                                    <outlet property="detailTextLabel" destination="6f3-OR-KFE" id="otz-yf-Ck6"/>
+                                    <outlet property="textLabel" destination="bdc-KH-WRx" id="cuI-GO-9LT"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -125,7 +129,7 @@
                                 <edgeInsets key="layoutMargins" top="8" left="0.0" bottom="8" right="8"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" id="VKP-Si-dkU">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" id="VKP-Si-dkU" customClass="TableViewCell">
                                 <rect key="frame" x="0.0" y="105" width="320" height="55"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VKP-Si-dkU" id="E30-y5-8Kp">
@@ -149,12 +153,16 @@
                                         <constraint firstAttribute="trailing" secondItem="VgU-vv-9od" secondAttribute="trailing" constant="15" id="27T-Lt-J9Y"/>
                                         <constraint firstItem="VgU-vv-9od" firstAttribute="centerY" secondItem="E30-y5-8Kp" secondAttribute="centerY" id="C4P-Nc-c4F"/>
                                         <constraint firstItem="ahG-od-J45" firstAttribute="leading" secondItem="E30-y5-8Kp" secondAttribute="leading" constant="15" id="S6u-GR-fmg"/>
-                                        <constraint firstItem="VgU-vv-9od" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ahG-od-J45" secondAttribute="trailing" constant="20" id="Upg-Sb-M8Z"/>
+                                        <constraint firstItem="VgU-vv-9od" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ahG-od-J45" secondAttribute="trailing" constant="8" id="Upg-Sb-M8Z"/>
                                         <constraint firstItem="ahG-od-J45" firstAttribute="centerY" secondItem="E30-y5-8Kp" secondAttribute="centerY" id="pmO-lA-fSD"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <edgeInsets key="layoutMargins" top="8" left="0.0" bottom="8" right="8"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <connections>
+                                    <outlet property="detailTextLabel" destination="VgU-vv-9od" id="lk3-yj-ZVn"/>
+                                    <outlet property="textLabel" destination="ahG-od-J45" id="MvE-3D-TdX"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="AddCell" textLabel="GYT-gm-fwM" style="IBUITableViewCellStyleDefault" id="rvG-Vj-yap">
                                 <rect key="frame" x="0.0" y="160" width="320" height="55"/>
@@ -246,7 +254,7 @@
                                 <edgeInsets key="layoutMargins" top="8" left="0.0" bottom="8" right="8"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="OB1-yh-bLE">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="OB1-yh-bLE" customClass="TableViewCell">
                                 <rect key="frame" x="0.0" y="105" width="320" height="55"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OB1-yh-bLE" id="fOi-cX-FXp">
@@ -268,7 +276,7 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="SAv-rE-IA3" firstAttribute="leading" secondItem="fOi-cX-FXp" secondAttribute="leading" constant="15" id="FtA-Zz-cdK"/>
-                                        <constraint firstItem="vh0-TN-wiw" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="SAv-rE-IA3" secondAttribute="trailing" constant="20" id="N9R-mr-cFO"/>
+                                        <constraint firstItem="vh0-TN-wiw" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="SAv-rE-IA3" secondAttribute="trailing" constant="8" id="N9R-mr-cFO"/>
                                         <constraint firstItem="vh0-TN-wiw" firstAttribute="centerY" secondItem="fOi-cX-FXp" secondAttribute="centerY" id="Y69-Ud-8J6"/>
                                         <constraint firstItem="SAv-rE-IA3" firstAttribute="centerY" secondItem="fOi-cX-FXp" secondAttribute="centerY" id="goY-rG-kbL"/>
                                         <constraint firstAttribute="trailing" secondItem="vh0-TN-wiw" secondAttribute="trailing" constant="15" id="ozA-C3-8yx"/>
@@ -276,6 +284,10 @@
                                 </tableViewCellContentView>
                                 <edgeInsets key="layoutMargins" top="8" left="0.0" bottom="8" right="8"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <connections>
+                                    <outlet property="detailTextLabel" destination="vh0-TN-wiw" id="nfU-Jc-aMG"/>
+                                    <outlet property="textLabel" destination="SAv-rE-IA3" id="jWW-09-VUt"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

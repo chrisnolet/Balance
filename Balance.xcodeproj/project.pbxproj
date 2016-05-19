@@ -23,6 +23,7 @@
 		835961D01CCA1E4600D22A10 /* Adapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 835961CF1CCA1E4600D22A10 /* Adapter.m */; };
 		835961D31CCC072800D22A10 /* AccountsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 835961D21CCC072800D22A10 /* AccountsTableViewController.m */; };
 		835961D61CCC073E00D22A10 /* HomeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 835961D51CCC073E00D22A10 /* HomeTableViewController.m */; };
+		83C641E91CEE2243006224B2 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 83C641E81CEE2243006224B2 /* TableViewCell.m */; };
 		83D8F28D1CE181CA00D7238A /* NSDictionary+StringValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 83D8F28C1CE181CA00D7238A /* NSDictionary+StringValue.m */; };
 		83D8F2911CE43BB300D7238A /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83D8F2901CE43BB300D7238A /* HeaderView.xib */; };
 		83D8F2941CE476BA00D7238A /* HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83D8F2931CE476BA00D7238A /* HeaderView.m */; };
@@ -63,6 +64,8 @@
 		835961D21CCC072800D22A10 /* AccountsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccountsTableViewController.m; path = Controllers/AccountsTableViewController.m; sourceTree = "<group>"; };
 		835961D41CCC073E00D22A10 /* HomeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeTableViewController.h; path = Controllers/HomeTableViewController.h; sourceTree = "<group>"; };
 		835961D51CCC073E00D22A10 /* HomeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeTableViewController.m; path = Controllers/HomeTableViewController.m; sourceTree = "<group>"; };
+		83C641E71CEE2243006224B2 /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TableViewCell.h; path = Views/TableViewCell.h; sourceTree = "<group>"; };
+		83C641E81CEE2243006224B2 /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TableViewCell.m; path = Views/TableViewCell.m; sourceTree = "<group>"; };
 		83D8F28B1CE181CA00D7238A /* NSDictionary+StringValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+StringValue.h"; path = "Categories/NSDictionary+StringValue.h"; sourceTree = "<group>"; };
 		83D8F28C1CE181CA00D7238A /* NSDictionary+StringValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+StringValue.m"; path = "Categories/NSDictionary+StringValue.m"; sourceTree = "<group>"; };
 		83D8F2901CE43BB300D7238A /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HeaderView.xib; path = Views/HeaderView.xib; sourceTree = "<group>"; };
@@ -177,6 +180,8 @@
 				83D8F2901CE43BB300D7238A /* HeaderView.xib */,
 				83D8F2921CE476BA00D7238A /* HeaderView.h */,
 				83D8F2931CE476BA00D7238A /* HeaderView.m */,
+				83C641E71CEE2243006224B2 /* TableViewCell.h */,
+				83C641E81CEE2243006224B2 /* TableViewCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -344,6 +349,7 @@
 				835961CB1CCA0A4200D22A10 /* NSDateFormatter+DateFormat.m in Sources */,
 				835961D61CCC073E00D22A10 /* HomeTableViewController.m in Sources */,
 				835961CC1CCA0A4200D22A10 /* UIAlertView+Error.m in Sources */,
+				83C641E91CEE2243006224B2 /* TableViewCell.m in Sources */,
 				832A760E1CC9885600FEA998 /* AppDelegate.m in Sources */,
 				835961BD1CC9FA9100D22A10 /* AccountObject.m in Sources */,
 				83D8F2941CE476BA00D7238A /* HeaderView.m in Sources */,
