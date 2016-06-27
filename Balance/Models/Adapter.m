@@ -61,19 +61,23 @@
                                      completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
 
         // Parse the response
-        NSDictionary *results = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+        NSDictionary *results;
 
-        // Return error for server-side issues
-        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
+        if (data) {
+            results = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
 
-        // TODO(CN): Generalize for all applications
-        if (httpResponse.statusCode != 200) {
-            NSDictionary *userInfo = @{
-                NSLocalizedDescriptionKey: results[@"resolve"],
-                NSLocalizedFailureReasonErrorKey: results[@"message"]
-            };
+            // Return error for server-side issues
+            NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
 
-            error = [NSError errorWithDomain:kBalanceErrorDomain code:[results[@"code"] integerValue] userInfo:userInfo];
+            // TODO(CN): Generalize for all applications
+            if (httpResponse.statusCode != 200) {
+                NSDictionary *userInfo = @{
+                    NSLocalizedDescriptionKey: results[@"resolve"],
+                    NSLocalizedFailureReasonErrorKey: results[@"message"]
+                };
+
+                error = [NSError errorWithDomain:kBalanceErrorDomain code:[results[@"code"] integerValue] userInfo:userInfo];
+            }
         }
 
         // Return to main thread

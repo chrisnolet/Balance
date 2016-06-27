@@ -99,6 +99,12 @@
 
     // Commit updates when all requests complete
     dispatch_group_notify(group, dispatch_get_main_queue(), ^{
+
+        // Skip if any accounts were not updated successfully
+        if ([updates count] < [accounts count]) {
+            return;
+        }
+
         RLMRealm *realm = [RLMRealm defaultRealm];
 
         [realm beginWriteTransaction];
