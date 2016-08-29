@@ -1,0 +1,8 @@
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1 ANALYTICS_VERSION=2.0.17
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/Analytics" "${PODS_ROOT}/Headers/Public/Mixpanel" "${PODS_ROOT}/Headers/Public/Realm" "${PODS_ROOT}/Headers/Public/TRVSDictionaryWithCaseInsensitivity" "${PODS_ROOT}/Headers/Public/plaid-ios-link" "${PODS_ROOT}/Headers/Public/plaid-ios-sdk"
+LIBRARY_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/Analytics" "$PODS_CONFIGURATION_BUILD_DIR/Mixpanel" "$PODS_CONFIGURATION_BUILD_DIR/Realm" "$PODS_CONFIGURATION_BUILD_DIR/TRVSDictionaryWithCaseInsensitivity" "$PODS_CONFIGURATION_BUILD_DIR/plaid-ios-link" "$PODS_CONFIGURATION_BUILD_DIR/plaid-ios-sdk" $(inherited) "${PODS_ROOT}/Realm/core"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/Analytics" -isystem "${PODS_ROOT}/Headers/Public/Mixpanel" -isystem "${PODS_ROOT}/Headers/Public/Realm" -isystem "${PODS_ROOT}/Headers/Public/TRVSDictionaryWithCaseInsensitivity" -isystem "${PODS_ROOT}/Headers/Public/plaid-ios-link" -isystem "${PODS_ROOT}/Headers/Public/plaid-ios-sdk"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"Analytics" -l"Mixpanel" -l"Realm" -l"TRVSDictionaryWithCaseInsensitivity" -l"c++" -l"icucore" -l"plaid-ios-link" -l"plaid-ios-sdk" -l"realm-ios" -framework "Accelerate" -framework "CoreGraphics" -framework "CoreTelephony" -framework "Foundation" -framework "QuartzCore" -framework "SystemConfiguration" -framework "UIKit" -weak_framework "CoreBluetooth" -weak_framework "CoreLocation" -weak_framework "SystemConfiguration"
+PODS_BUILD_DIR = $BUILD_DIR
+PODS_CONFIGURATION_BUILD_DIR = $PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
+PODS_ROOT = ${SRCROOT}/Pods
