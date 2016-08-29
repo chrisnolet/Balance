@@ -7,7 +7,7 @@
 
 #import <UIKit/UIKit.h>
 
-#import <plaid_ios_sdk/PLDDefines.h>
+#import <plaid-ios-sdk/PLDDefines.h>
 
 @class PLDAuthentication;
 @class PLDInstitution;
