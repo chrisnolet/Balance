@@ -5,4 +5,5 @@ OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${P
 OTHER_LDFLAGS = $(inherited) -ObjC -l"Analytics" -l"Mixpanel" -l"Realm" -l"TRVSDictionaryWithCaseInsensitivity" -l"c++" -l"icucore" -l"plaid-ios-link" -l"plaid-ios-sdk" -l"realm-ios" -framework "Accelerate" -framework "CoreGraphics" -framework "CoreTelephony" -framework "Foundation" -framework "QuartzCore" -framework "SystemConfiguration" -framework "UIKit" -weak_framework "CoreBluetooth" -weak_framework "CoreLocation" -weak_framework "SystemConfiguration"
 PODS_BUILD_DIR = $BUILD_DIR
 PODS_CONFIGURATION_BUILD_DIR = $PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
+PODS_PODFILE_DIR_PATH = ${SRCROOT}/.
 PODS_ROOT = ${SRCROOT}/Pods
