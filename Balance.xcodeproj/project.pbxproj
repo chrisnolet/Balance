@@ -252,6 +252,7 @@
 				TargetAttributes = {
 					832A76051CC9885600FEA998 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = B7UP3ZP5NK;
 					};
 				};
 			};
@@ -469,6 +470,7 @@
 			baseConfigurationReference = 04E04E2475F9B89542744CD4 /* Pods-Balance.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = B7UP3ZP5NK;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Balance/Balance-Prefix.pch";
 				INFOPLIST_FILE = Balance/Info.plist;
@@ -483,6 +485,7 @@
 			baseConfigurationReference = 3BA9AA6D4B7006CA7C6CA772 /* Pods-Balance.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = B7UP3ZP5NK;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Balance/Balance-Prefix.pch";
 				INFOPLIST_FILE = Balance/Info.plist;
